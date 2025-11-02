@@ -3,20 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top Achados | O Seu Hub de Reviews e Descobertas</title>
+    
+    <title>Top Ofertas | Seu Guia para Descontos e Oportunidades Verificadas</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Montserrat:wght@800&display=swap" rel="stylesheet">
     <style>
-        
+        /* Paleta de Cores: Azul Escuro (Confiança) e Branco/Cinza */
         :root {
-            --color-bg-dark: #1f1f1f; /* Fundo principal (quase preto) */
-            --color-accent: #8b0000; /* Vermelho Escuro/Marrom */
-            --color-text-light: #e0e0e0;
-            --color-footer-dark: #151515;
+            --color-bg-dark: #121212; /* Fundo principal quase preto */
+            --color-accent: #1e90ff; /* Azul Profundo */
+            --color-text-light: #f5f5f5;
+            --color-footer-dark: #0a0a0a;
+            --font-display: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: var(--font-body);
             background-color: var(--color-bg-dark);
             color: var(--color-text-light);
             min-height: 100vh;
@@ -26,27 +29,18 @@
 
         .header-bg {
             background-color: var(--color-footer-dark);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .main-content {
-            background: radial-gradient(circle at center, rgba(139, 0, 0, 0.1) 0%, rgba(31, 31, 31, 1) 70%);
+            /* Gradiente em Azul Suave */
+            background: radial-gradient(circle at center, rgba(30, 144, 255, 0.1) 0%, rgba(18, 18, 18, 1) 70%);
             flex-grow: 1;
         }
 
-        .cta-button {
-            background-color: var(--color-accent);
-            transition: background-color 0.3s, transform 0.2s;
-        }
-
-        .cta-button:hover {
-            background-color: #a00000;
-            transform: translateY(-2px);
-        }
-
-        /* Animação de brilho sutil */
+        /* Animação de brilho sutil em Azul */
         .glowing-text {
-            text-shadow: 0 0 10px rgba(139, 0, 0, 0.5);
+            text-shadow: 0 0 10px rgba(30, 144, 255, 0.5);
             animation: pulse-glow 3s infinite ease-in-out;
         }
 
@@ -65,11 +59,11 @@
     <!-- Header Padrão - Apenas Logo/Título -->
     <header class="header-bg p-4 sticky top-0 z-10">
         <div class="container mx-auto flex justify-between items-center max-w-7xl">
-            <h1 class="text-3xl font-extrabold tracking-tight">
-                <span class="icon-star text-4xl mr-1">★</span> 
-                Top Achados
+            <h1 class="text-3xl font-extrabold tracking-tight" style="font-family: var(--font-display);">
+                <!-- Logo Top Ofertas -->
+                <span class="icon-star text-4xl mr-1">💰</span> 
+                TOP OFERTAS
             </h1>
-          
         </div>
     </header>
 
@@ -78,23 +72,26 @@
         <div class="text-center max-w-4xl space-y-8">
             <!-- Frase de Boas-Vindas Criativa -->
             <p class="text-xl sm:text-2xl font-semibold glowing-text">
-                Seu filtro inteligente no universo de achadinhos.
+                O seu atalho para as melhores promoções e descontos do Brasil.
             </p>
-            <h2 class="text-5xl sm:text-7xl font-black text-white leading-tight">
-                Bem-vindo ao Top Achados.
+            <h2 class="text-5xl sm:text-7xl font-black text-white leading-tight uppercase" style="font-family: var(--font-display);">
+                Bem-vindo ao Top Ofertas.
             </h2>
             <p class="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto">
-                Aqui, transformamos a busca em descoberta. Nossa missão é analisar, testar e apresentar apenas os melhores produtos, ofertas e oportunidades.
+                Filtramos o ruído e entregamos apenas os melhores produtos, ofertas imperdíveis e oportunidades verificadas das principais varejistas online.
             </p>
 
-          
-
-          
+            <!-- Placeholder visual para o conteúdo futuro -->
             <div class="mt-16 text-gray-400 text-base">
-                <p class="mb-2">Estamos selecionando os primeiros reviews com cuidado e atenção.</p>
-              
-                <span class="mx-2 text-2xl">⚡</span> <span class="mx-2 text-2xl">📦</span> <span class="mx-2 text-2xl">🔥</span> <span class="mx-2 text-2xl">✅</span>
-                <p class="mt-4 font-semibold">Artigos e reviews completos chegando em breve!</p>
+                <p class="mb-2">Estamos selecionando os primeiros reviews focados em custo-benefício e qualidade.</p>
+                
+                <!-- Ícones representativos das ofertas -->
+                <span class="mx-2 text-2xl" style="color:var(--color-accent);">💸</span> 
+                <span class="mx-2 text-2xl" style="color:var(--color-accent);">🎁</span> 
+                <span class="mx-2 text-2xl" style="color:var(--color-accent);">🔥</span> 
+                <span class="mx-2 text-2xl" style="color:var(--color-accent);">💯</span>
+                
+                <p class="mt-4 font-semibold text-white">Artigos e ofertas completas chegando em breve!</p>
             </div>
         </div>
     </main>
@@ -102,8 +99,7 @@
     <!-- Footer Padrão - Apenas Texto Legal/Direitos -->
     <footer class="bg-gray-900 text-gray-400 py-8 border-t border-gray-800">
         <div class="container mx-auto px-4 max-w-7xl text-center">
-            <!-- Links removidos -->
-            <p class="text-xs">&copy; 2025 Top Achados.  Todos os direitos reservados.</p>
+            <p class="text-xs">&copy; 2025 Top Ofertas. Review Nexus. Todos os direitos reservados.</p>
         </div>
     </footer>
 
