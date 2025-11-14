@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logotipo Top Ofertas (Achadinho Dinâmico)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Importação da fonte Inter */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Fundo suave */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .logo-container {
+            box-shadow: 0 15px 30px rgba(10, 30, 50, 0.15); /* Sombra mais destacada */
+            background-image: linear-gradient(145deg, #ffffff, #f9f9ff);
+        }
+
+        /* Estilo da lupa/pin */
+        .search-pin {
+            background-color: #FF5A5F; /* Vermelho vibrante de oferta */
+            position: relative;
+            transform: rotate(-10deg); /* Inclinação dinâmica */
+        }
+
+        /* Efeito de destaque no topo */
+        .pin-top {
+            background-color: #FFC04D; /* Amarelo ouro */
+        }
+
+        .text-ofertas {
+            color: #1a202c; /* Cinza escuro para contraste */
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo-container p-6 sm:p-8 rounded-3xl flex items-center space-x-4">
+        <!-- Ícone Estilizado: Lupa / Pin de Achadinho -->
+        <div class="search-pin w-14 h-14 sm:w-20 sm:h-20 rounded-full flex flex-col items-center justify-center">
+            <!-- Ponto superior do Pin/Lupa -->
+            <div class="pin-top w-5 h-5 sm:w-6 sm:h-6 rounded-full absolute -top-1 -right-1 border-2 border-white"></div>
+            
+            <!-- SVG: Sacola de Compras (Achadinho) -->
+            <svg class="w-8 h-8 sm:w-10 sm:h-10 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+        </div>
+
+        <!-- Nome do Logo -->
+        <div>
+            <span class="block text-xl sm:text-2xl font-bold tracking-wider uppercase text-gray-500 leading-tight">
+                TOP
+            </span>
+            <span class="block text-4xl sm:text-5xl font-black tracking-tighter uppercase text-ofertas leading-none">
+                OFERTAS
+            </span>
+            <!-- Tagline sutil para reforçar o nicho de cursos -->
+            <span class="block text-sm font-medium text-green-600 mt-1">
+                | Achados Profissionais |
+            </span>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -19,7 +19,31 @@
     padding: 15px 0;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}.site-title {
+}
+/*logo*/
+  .logo-container {
+            box-shadow: 0 15px 30px rgba(10, 30, 50, 0.15); /* Sombra mais destacada */
+            background-image: linear-gradient(145deg, #ffffff, #f9f9ff);
+        }
+
+        /* Estilo da lupa/pin */
+        .search-pin {
+            background-color: #FF5A5F; /* Vermelho vibrante de oferta */
+            position: relative;
+            transform: rotate(-10deg); /* Inclinação dinâmica */
+        }
+
+        /* Efeito de destaque no topo */
+        .pin-top {
+            background-color: #FFC04D; /* Amarelo ouro */
+        }
+
+        .text-ofertas {
+            color: #1a202c; /* Cinza escuro para contraste */
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+        }
+
+.site-title {
     font-size: 2.2em;
     margin: 0;
 }.site-title a {
