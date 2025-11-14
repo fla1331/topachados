@@ -6,7 +6,52 @@
     
     <title>Top Ofertas | Seu Guia para Descontos e Oportunidades Verificadas</title>
     
-    
+    <style>
+      
+        :root {
+            --color-bg-dark: #121212; /* Fundo principal quase preto */
+            --color-accent: #1e90ff; /* Azul Profundo */
+            --color-text-light: #f5f5f5;
+            --color-footer-dark: #af1a1a;
+            --font-display: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg-dark);
+            color: var(--color-text-light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header-bg {
+            background-color: var(--color-footer-dark);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .main-content {
+            /* Gradiente em Azul Suave */
+            background: radial-gradient(circle at center, rgba(30, 144, 255, 0.1) 0%, rgba(18, 18, 18, 1) 70%);
+            flex-grow: 1;
+        }
+
+        /* Animação de brilho sutil em Azul */
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(30, 144, 255, 0.5);
+            animation: pulse-glow 3s infinite ease-in-out;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        .icon-star {
+            color: var(--color-accent);
+        }
+    </style>
 </head>
 <body>
 
