@@ -5,65 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Top Ofertas | Seu Guia para Descontos e Oportunidades Verificadas</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Montserrat:wght@800&display=swap" rel="stylesheet">
-    <style>
-      
-        :root {
-            --color-bg-dark: #121212; /* Fundo principal quase preto */
-            --color-accent: #1e90ff; /* Azul Profundo */
-            --color-text-light: #f5f5f5;
-            --color-footer-dark: #0a0a0a;
-            --font-display: 'Montserrat', sans-serif;
-            --font-body: 'Inter', sans-serif;
-        }
-
-        body {
-            font-family: var(--font-body);
-            background-color: var(--color-bg-dark);
-            color: var(--color-text-light);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .header-bg {
-            background-color: var(--color-footer-dark);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .main-content {
-            /* Gradiente em Azul Suave */
-            background: radial-gradient(circle at center, rgba(30, 144, 255, 0.1) 0%, rgba(18, 18, 18, 1) 70%);
-            flex-grow: 1;
-        }
-
-        /* Animação de brilho sutil em Azul */
-        .glowing-text {
-            text-shadow: 0 0 10px rgba(30, 144, 255, 0.5);
-            animation: pulse-glow 3s infinite ease-in-out;
-        }
-
-        @keyframes pulse-glow {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
-        }
-
-        .icon-star {
-            color: var(--color-accent);
-        }
-    </style>
+    
+    
 </head>
 <body>
 
-    <!-- Header Padrão - Logo/Título -->
-    <header class="header-bg p-4 sticky top-0 z-10">
-         <div class="logo-container p-6 sm:p-8 rounded-3xl flex items-center space-x-4">
+    <header>
+        <div class="container header-content">
+            <div class="logo-container p-6 sm:p-8 rounded-3xl flex items-center space-x-4">
         <!-- Ícone Estilizado: Lupa / Pin de Achadinho -->
         <div class="search-pin w-14 h-14 sm:w-20 sm:h-20 rounded-full flex flex-col items-center justify-center">
-            <!-- Ponto superior do Pin/Lupa -->
-            <div class="pin-top w-5 h-5 sm:w-6 sm:h-6 rounded-full absolute -top-1 -right-1 border-2 border-white"></div>
-            
             <!-- SVG: Sacola de Compras  -->
             <svg class="w-8 h-8 sm:w-10 sm:h-10 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
@@ -73,20 +24,29 @@
         </div>
 
         <!-- Logo -->
-        <div>
+        <div style="margin-left: 0;">
             <span class="block text-xl sm:text-2xl font-bold tracking-wider uppercase text-gray-500 leading-tight">
                 TOP
             </span>
             <span class="block text-4xl sm:text-5xl font-black tracking-tighter uppercase text-ofertas leading-none">
                 OFERTAS
             </span>
-            <!-- Tagline -->
-            <span class="block text-sm font-medium text-green-600 mt-1">
-                | Achados Profissionais |
-            </span>
+          
         </div>
     </div>
+            <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false">
+                ☰
+            </button>
+            <nav id="main-nav" class="main-nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li> <a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
+
 
     <!-- Conteúdo Principal - Bem-Vindo Estático -->
     <main class="main-content flex items-center justify-center p-8">
