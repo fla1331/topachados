@@ -29,7 +29,7 @@
     --shadow: 0 6px 18px rgba(31,122,46,0.08);
     --cta-shadow: 0 6px 20px rgba(47,180,75,0.18);
 }
-{box-sizing:border-box}
+*{box-sizing:border-box}
 body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;line-height:1.5;background:var(--bg);color:var(--text);margin:0}
 .container{max-width:1100px;margin:0 auto;padding:22px}
 header{background:var(--white);border-botton:1px solid var(--border);position:sticky;top:0;z-index:40}
@@ -41,18 +41,18 @@ nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
 nav a{color:var(--muted);text-decoration:none;font-weight:600}
 nav a:hover{color:var(--primary)}
 
-/ Hero /
+/* Hero */
 .hero{background:linear-gradient(90deg,rgba(31,122,46,0.06),rgba(47,180,75,0.03));padding:36px;border-radius:12px;margin:18px 0;display:flex;gap:20px;align-items:center}
 .hero-left{flex:1}
 .hero h2{margin:0 0 8px;font-size:26px;color:var(--primary)}
 .hero p{margin:0;color:var(--muted)}
 .hero-cta{margin:30px 0;}
-.btn-primary{background:var(--primary);color:#fff;padding:12px 16px;border-radius:8px;border:0;font-weight:700;cursor:pointer;box-shadow:var(--cta-shadow);text-decoration:none;    margin: 15px 0;
+.btn-primary{background:var(--primary);color:#fff;padding:12px 16px;border-radius:8px;border:0;font-weight:700;cursor:pointer;box-shadow:var(--cta-shadow);text-decoration:none;    margin: 10px 0;
     display: inline-block;}
 .hero-right{width:260px;text-align:center}
 .hero-right img{width:100%;}
 
-/ Quick comparison /
+/* Quick comparison */
 .overview{background:var(--white);padding:14px;border-radius:10px;box-shadow:var(--shadow);margin-top:18px;border:1px solid var(--border)}
 .overview table{width:100%;border-collapse:collapse}
 .overview th{background:#f0fbf0;text-align:left;padding:10px;color:var(--primary);font-weight:700}
@@ -61,7 +61,7 @@ nav a:hover{color:var(--primary)}
     text-align: center;}
 .buy-btn:hover{background:var(--primary);color:#fff}
 
-/ Layout /
+/* Layout */
 .main{display:grid;grid-template-columns:1fr 340px;gap:26px;margin-top:20px}
 article{background:var(--white);padding:22px;border-radius:12px;box-shadow:var(--shadow);border:1px solid var(--border)}
 aside{position:relative}
@@ -76,13 +76,13 @@ aside{position:relative}
 .specs{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
 .spec{background:#f3fff3;padding:6px 8px;border-radius:6px;color:var(--primary);font-weight:700;border:1px solid #e9f7ea}
 
-/ full table /
+/* full table */
 .full-table{overflow:auto;margin-top:20px}
 table.compare{width:100%;border-collapse:collapse;background:#fff}
 table.compare th, table.compare td{padding:12px;border:1px solid #f1f6f1;text-align:left}
 table.compare th{background:#f7fff7;color:var(--primary);font-weight:700}
 
-/ New sections /
+/* New sections */
 .trust-badges{background:#e8f5e8;padding:15px;border-radius:8px;margin:20px 0;text-align:center}
 .trust-badges .badges{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;margin-top:10px}
 .trust-badges .badge-item{display:flex;align-items:center;gap:8px;font-weight:600}
@@ -94,7 +94,7 @@ table.compare th{background:#f7fff7;color:var(--primary);font-weight:700}
 
 .view-counter{font-size:14px;color:var(--muted);text-align:center;margin:15px 0}
 
-/ affiliate strip sticky mobile /
+/* affiliate strip sticky mobile */
 .affiliate-strip{display:none;position:fixed;left:16px;right:16px;botton:18px;background:var(--primary);color:#fff;padding:12px;border-radius:12px;justify-content:space-between;align-items:center;box-shadow:var(--cta-shadow);z-index:80}
 .affiliate-strip a{color:#fff;text-decoration:none;font-weight:800}
 @media(max-width:980px){
@@ -107,11 +107,11 @@ table.compare th{background:#f7fff7;color:var(--primary);font-weight:700}
     .testimonials{grid-template-columns:1fr}
 }
 
-/ footer /
+/* footer */
 footer{margin-top:30px;text-align:center;padding:26px 12px;color:var(--muted);font-size:14px}
 footer a{color:var(--primary);text-decoration:none}
 
-/ small helpers /
+/* small helpers */
 .disclaimer{font-size:13px;color:var(--muted);margin-top:8px}
 .tag{display:inline-block;background:#f1fff1;color:var(--primary);padding:6px 8px;border-radius:6px;font-weight:700;border:1px solid #e6f6e6;margin-right:6px}
 </style>
@@ -139,7 +139,7 @@ footer a{color:var(--primary);text-decoration:none}
     "category":"Maquininha",
     "url":"https://topofertas.reviewnexus.blog/ton-maquininhas-modelos/ton#T3-SMART-ton-PRO-SITE"
     }
-    / Additional products included in page content /
+    /* Additional products included in page content */
 ]
 }
 </script>
@@ -150,7 +150,7 @@ footer a{color:var(--primary);text-decoration:none}
 <header>
 <div class="container header-inner">
     <div class="logo">
-    <div class="badge">T</div>
+    <img src="https://topofertas.reviewnexus.blog/assets/img/ton/ton-stone.png" alt="Logo Ton Stone Parceiro">
     <div>
         <h1>Ton Maquininhas - Análise Completa</h1>
         <div style="font-size:12px;color:var(--muted)">Comparativo dos modelos oficiais</div>
@@ -202,7 +202,7 @@ footer a{color:var(--primary);text-decoration:none}
 
 <!-- QUICK OVERVIEW -->
 <section class="overview" id="comparativo">
-    <h3 style="margin:0 0 12px;color:var(--primary)">Comparativo rápido — escolha por necessidade</h3>
+    <h3 style="margin:0 0 12px;color:var(--primary)">Comparativo rápido - Escolha por necessidade</h3>
     <table>
     <thead>
         <tr>
@@ -304,9 +304,15 @@ footer a{color:var(--primary);text-decoration:none}
     </div>
 
     <section id="overview">
-        <h2 style="color:var(--primary)">Visão geral — Como escolher a maquininha ton certa</h2>
-        <p>Se você está avaliando as maquininhas ton, a escolha ideal depende de três perguntas: <strong>a) você vende presencialmente ou online?</strong> <strong>b) precisa de impressora integrada?</strong> <strong>c) quanto movimento de vendas você tem (baixa, média ou alta)?</strong></p>
-        <p>Este guia analisa cada modelo oficial (10 modelos) pelo perfil de uso — MEI, PJ, loja física, ou integração com site — e traz prós e contras objetivos para facilitar a decisão.</p>
+        <h2 style="color:var(--primary)">Visão geral — Como escolher a maquininha Ton certa</h2>
+        <p>Se você está avaliando as maquininhas Ton, a escolha ideal depende de três perguntas: </p>
+            <ul>
+                <li><strong>a) você vende presencialmente ou online?</strong></li>
+                <li><strong> <strong>b) precisa de impressora integrada?</strong></li>
+                <li><strong>c) quanto movimento de vendas você tem (baixa, média ou alta)?</strong></li>
+            
+            </ul><br>
+        <p>Este guia analisa cada modelo oficial  pelo perfil de uso — MEI, PJ, loja física, ou integração com site e traz prós e contras objetivos para facilitar sua escolha.</p>
         
         <div style="background:#f8fff8;padding:15px;border-radius:8px;margin-top:15px;border:1px solid #eef8ee">
             <h4 style="margin:0 0 10px;color:var(--primary)">🎯 Dica Rápida:</h4>
@@ -673,7 +679,7 @@ footer a{color:var(--primary);text-decoration:none}
     <div style="margin-top:14px;background:var(--white);padding:12px;border-radius:12px;box-shadow:var(--shadow);border:1px solid var(--border)">
         <h4 style="margin:0 0 8px;color:var(--primary)">Precisa comprar agora?</h4>
         <p style="margin:0 0 8px;color:var(--muted)">Use os links oficiais ao lado dos modelos — garantem suporte e garantia.</p>
-        <a class="buy-btn" href="#" data-affiliate="COLE_AQUI_SEU_LINK" rel="sponsored noopener noreferrer" target="_blank">Ir para site oficial</a>
+        <a class="buy-btn" href="#comparativo"  rel="sponsored noopener noreferrer">Ver Ofertas</a>
     </div>
     </aside>
 </div>
