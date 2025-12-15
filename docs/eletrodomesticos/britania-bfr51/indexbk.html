@@ -7,24 +7,15 @@
   <meta name="description" content="Leia a análise completa da Britânia BFR51. Descubra a qualidade, prós e contras deste produto da Britânia e veja se ele é ideal para Famílias que buscam capacidade e durabilidade.">
   <meta name="keywords" content="Britânia Air Fryer BFR51 5,5L vale a pena comprar, Britânia BFR51 dá problemas, Britânia BFR51 é a mais recomendada, como limpar a Britânia BFR51">
 
-  <!-- Link para o Font Awesome para ícones -->
+  <!-- Link para o Font Awesome para ícones (incluindo o hambúrguer) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Link para o CSS principal -->
+  <!-- Link para o CSS principal (este será o seu arquivo) -->
   <link rel="stylesheet" href="https://topofertas.reviewnexus.blog/assets/css/style.css">
+  <!-- Link para o CSS específico desta página (código embutido abaixo) -->
   <style>
     /* ============================================
        RESET & CONFIGURAÇÕES GERAIS
     ============================================ */
-    :root {
-      --primary-color: #1a3a8f;
-      --secondary-color: #28a745;
-      --accent-color: #ff6b00;
-      --light-bg: #f8f9fa;
-      --dark-bg: #1a1a1a;
-      --text-color: #333;
-      --text-light: #666;
-    }
-
     * {
       margin: 0;
       padding: 0;
@@ -34,9 +25,9 @@
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
-      color: var(--text-color);
-      background-color: var(--light-bg);
-      overflow-x: hidden;
+      color: #333;
+      background-color: #f8f9fa;
+      overflow-x: hidden; /* Impede rolagem horizontal em menu mobile */
     }
 
     a {
@@ -54,14 +45,15 @@
       width: 100%;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 15px;
+      padding: 0 20px;
     }
 
     /* ============================================
-       CABEÇALHO COM MENU HAMBÚRGUER FUNCIONAL
+       CABEÇALHO (HEADER) COM MENU RESPONSIVO
+       Baseado em conceitos de [citation:3]
     ============================================ */
     header {
-      background: linear-gradient(135deg, var(--primary-color) 0%, #2a4db9 100%);
+      background: linear-gradient(to right, #1a3a8f, #2a4db9);
       color: white;
       padding: 15px 0;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -74,326 +66,212 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: relative;
     }
 
-    /* LOGO */
-    .logo-container {
+    /* LOGO E TÍTULO DO SITE */
+    .site-title {
+      font-size: 1.8rem;
+      font-weight: 700;
       display: flex;
       align-items: center;
       gap: 15px;
-      z-index: 1001;
     }
 
     .site-logo {
       height: 50px;
       width: auto;
-      border-radius: 8px;
     }
 
-    .site-title {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: white;
-    }
-
-    /* MENU HAMBÚRGUER - BOTÃO BONITO */
-    .menu-toggle {
-      display: none;
+    /* MENU HAMBÚRGUER PARA MOBILE */
+    .btn-hamburger {
+      display: none; /* Escondido no desktop */
       background: none;
       border: none;
       color: white;
       font-size: 1.8rem;
       cursor: pointer;
-      width: 44px;
-      height: 44px;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-      z-index: 1002;
-      position: relative;
+      padding: 5px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
     }
 
-    .menu-toggle:hover {
+    .btn-hamburger:hover {
       background-color: rgba(255, 255, 255, 0.1);
-      transform: scale(1.05);
     }
 
-    .menu-toggle .fa-times {
-      display: none;
-    }
-
-    /* MENU DE NAVEGAÇÃO PRINCIPAL - ESTILO MODERNO */
-    .main-nav {
-      display: flex;
-    }
-
+    /* MENU DE NAVEGAÇÃO PRINCIPAL */
     .main-nav ul {
       display: flex;
       list-style: none;
       gap: 25px;
-      margin: 0;
-      padding: 0;
     }
 
     .main-nav a {
       color: white;
       font-weight: 500;
-      padding: 10px 16px;
-      border-radius: 8px;
+      padding: 8px 12px;
+      border-radius: 5px;
       transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
     }
 
-    .main-nav a:hover {
+    .main-nav a:hover,
+    .main-nav a:focus {
       background-color: rgba(255, 255, 255, 0.15);
       transform: translateY(-2px);
     }
 
-    .main-nav a:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 3px;
-      background-color: var(--accent-color);
-      transition: width 0.3s ease;
-    }
-
-    .main-nav a:hover:after {
-      width: 100%;
-    }
-
     /* ============================================
-       LAYOUT PRINCIPAL COM SIDEBAR FIXA
+       LAYOUT PRINCIPAL (MAIN) COM SIDEBAR
     ============================================ */
     .main-container {
       display: flex;
       gap: 40px;
       margin: 30px auto;
-      position: relative;
+      flex-wrap: wrap; /* Permite que a sidebar vá para baixo em telas pequenas */
     }
 
-    /* CONTEÚDO PRINCIPAL - FLEXÍVEL */
+    /* CONTEÚDO PRINCIPAL DO ARTIGO */
     .content {
       flex: 1;
-      min-width: 0; /* Importante para flexbox */
+      min-width: 300px; /* Garante boa leitura em mobile */
       background-color: white;
-      padding: 35px;
-      border-radius: 16px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
     }
 
-    /* SIDEBAR FIXA - NOVA VERSÃO */
+    /* SIDEBAR LATERAL */
     .sidebar {
       width: 320px;
-      position: sticky;
-      top: 100px; /* Ajuste conforme a altura do seu header */
-      height: calc(100vh - 120px);
-      overflow-y: auto;
+      min-width: 280px;
       background-color: white;
       padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
-      scrollbar-width: thin;
-      scrollbar-color: #ccc transparent;
-    }
-
-    /* Personalização da scrollbar da sidebar */
-    .sidebar::-webkit-scrollbar {
-      width: 6px;
-    }
-
-    .sidebar::-webkit-scrollbar-track {
-      background: #f1f1f1;
-      border-radius: 10px;
-    }
-
-    .sidebar::-webkit-scrollbar-thumb {
-      background: #ccc;
-      border-radius: 10px;
-    }
-
-    .sidebar::-webkit-scrollbar-thumb:hover {
-      background: #aaa;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
     }
 
     /* ============================================
        ESTILOS DO ARTIGO
     ============================================ */
     .article-meta {
-      display: flex;
-      gap: 25px;
-      flex-wrap: wrap;
-      color: var(--text-light);
-      font-size: 0.95rem;
+      color: #666;
+      font-size: 0.9rem;
       margin-bottom: 25px;
-      padding-bottom: 20px;
+      padding-bottom: 15px;
       border-bottom: 1px solid #eee;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
-    .meta-item {
+    .article-meta span {
       display: flex;
       align-items: center;
-      gap: 8px;
-    }
-
-    .meta-item i {
-      color: var(--primary-color);
+      gap: 5px;
     }
 
     h1 {
-      color: var(--primary-color);
+      color: #1a3a8f;
       margin-bottom: 20px;
-      font-size: 2.3rem;
+      font-size: 2.2rem;
       line-height: 1.3;
     }
 
     h2 {
-      color: var(--primary-color);
+      color: #2a4db9;
       margin-top: 35px;
-      margin-bottom: 18px;
-      padding-bottom: 10px;
+      margin-bottom: 15px;
+      padding-bottom: 8px;
       border-bottom: 2px solid #eaeaea;
-      font-size: 1.8rem;
+      font-size: 1.7rem;
     }
 
     h3 {
-      color: #444;
+      color: #333;
       margin-top: 25px;
-      margin-bottom: 12px;
-      font-size: 1.4rem;
+      margin-bottom: 10px;
+      font-size: 1.3rem;
     }
 
     p {
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       text-align: justify;
-      font-size: 1.05rem;
     }
 
-
+    /* IMAGEM DESTACADA */
     .featured-image {
       width: 100%;
-      border-radius: 12px;
-      margin: 25px auto;
-      transition: transform 0.3s ease;
-    }
-
-    .featured-image:hover {
-      transform: scale(1.01);
-    }
-
-    /* LISTAS ESTILIZADAS */
-    .pros-list, .cons-list {
-      background: linear-gradient(to right, transparent, #f9f9f9);
-      padding: 22px;
       border-radius: 10px;
-      margin: 22px 0;
-      border-left: 5px solid;
-      list-style-position: inside;
+      margin: 25px 0;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    /* LISTAS DE PRÓS E CONTRAS */
+    .pros-list, .cons-list {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid;
     }
 
     .pros-list {
-      border-left-color: var(--secondary-color);
+      border-left-color: #28a745;
     }
 
     .cons-list {
-      border-left-color: #e74c3c;
+      border-left-color: #dc3545;
     }
 
     .pros-list li, .cons-list li {
-      margin-bottom: 12px;
-      padding-left: 8px;
-      position: relative;
+      margin-bottom: 10px;
+      padding-left: 5px;
     }
 
-    .pros-list li:before {
-      content: '✓';
-      color: var(--secondary-color);
-      font-weight: bold;
-      margin-right: 10px;
-    }
-
-    .cons-list li:before {
-      content: '✗';
-      color: #e74c3c;
-      font-weight: bold;
-      margin-right: 10px;
-    }
-
-    /* SUMÁRIO ESTILIZADO */
+    /* SUMÁRIO (TOC) */
     .toc {
-      background: linear-gradient(135deg, #f1f5fd 0%, #e8efff 100%);
-      padding: 25px;
-      border-radius: 12px;
+      background-color: #f1f5fd;
+      padding: 20px;
+      border-radius: 10px;
       margin: 25px 0;
-      border-left: 5px solid var(--primary-color);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .toc:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 5px;
-      background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+      border-left: 5px solid #2a4db9;
     }
 
     .toc ul {
-      list-style: none;
-      padding-left: 0;
+      list-style-type: none;
+      padding-left: 15px;
     }
 
     .toc li {
-      margin-bottom: 12px;
-      padding-left: 20px;
-      position: relative;
-    }
-
-    .toc li:before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: var(--accent-color);
-      font-weight: bold;
+      margin-bottom: 10px;
     }
 
     .toc a:hover {
-      color: var(--primary-color);
+      color: #1a3a8f;
       text-decoration: underline;
-      padding-left: 5px;
-      transition: padding-left 0.2s ease;
     }
 
-    /* BOTÃO DE CTA MODERNO */
+    /* BOTÃO DE CALL-TO-ACTION */
     .btn-cta {
       display: inline-block;
-      background: linear-gradient(135deg, var(--secondary-color) 0%, #20c997 100%);
+      background: linear-gradient(to right, #28a745, #20c997);
       color: white;
-      padding: 16px 32px;
+      padding: 15px 30px;
       border-radius: 50px;
       font-weight: bold;
       font-size: 1.1rem;
       margin-top: 15px;
       transition: all 0.3s ease;
-      box-shadow: 0 6px 15px rgba(40, 167, 69, 0.25);
-      text-align: center;
-      border: none;
-      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
     }
 
     .btn-cta:hover {
       transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(40, 167, 69, 0.35);
-      background: linear-gradient(135deg, #239d58 0%, #1aa179 100%);
+      box-shadow: 0 6px 15px rgba(40, 167, 69, 0.4);
     }
 
     /* ============================================
-       WIDGETS DA SIDEBAR
+       SIDEBAR WIDGETS
     ============================================ */
     .widget {
       margin-bottom: 30px;
@@ -403,79 +281,56 @@
 
     .widget:last-child {
       border-bottom: none;
-      margin-bottom: 0;
     }
 
     .widget-title {
-      color: var(--primary-color);
+      color: #1a3a8f;
       font-size: 1.3rem;
-      margin-bottom: 18px;
-      padding-bottom: 10px;
+      margin-bottom: 15px;
+      padding-bottom: 8px;
       border-bottom: 2px solid #eaeaea;
-      display: flex;
-      align-items: center;
-      gap: 10px;
     }
 
-    .widget-title i {
-      color: var(--accent-color);
-    }
-
+    /* Widget de Produtos Relacionados */
     .related-product {
       display: flex;
       gap: 15px;
       align-items: center;
       margin-bottom: 15px;
-      padding: 15px;
+      padding: 12px;
       background: #f9f9f9;
-      border-radius: 10px;
-      transition: all 0.3s ease;
-      border: 1px solid transparent;
+      border-radius: 8px;
+      transition: background-color 0.3s;
     }
 
     .related-product:hover {
       background-color: #eef2ff;
-      border-color: var(--primary-color);
-      transform: translateX(5px);
     }
 
     .related-product img {
-      width: 70px;
-      height: 70px;
+      width: 60px;
+      height: 60px;
       object-fit: cover;
       border-radius: 8px;
-      border: 2px solid white;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
     }
 
-    /* WIDGET DE OFERTA ESPECIAL */
-    .offer-widget {
-      background: linear-gradient(135deg, #fff9e6 0%, #ffeaa7 100%);
-      border: 2px dashed #fdcb6e;
-      border-radius: 12px;
-      padding: 20px;
+    /* Widget de CTA Lateral */
+    .sidebar-cta {
       text-align: center;
-    }
-
-    .offer-tag {
-      display: inline-block;
-      background: #e74c3c;
-      color: white;
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: bold;
-      margin-bottom: 10px;
+      background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+      padding: 20px;
+      border-radius: 10px;
+      border: 2px dashed #c9b8a8;
     }
 
     /* ============================================
-       RODAPÉ
+       RODAPÉ (FOOTER)
     ============================================ */
     footer {
-      background-color: var(--dark-bg);
+      background-color: #1a1a1a;
       color: #ccc;
       padding: 40px 0 20px;
-      margin-top: 60px;
+      margin-top: 50px;
     }
 
     .footer-container {
@@ -486,11 +341,10 @@
     }
 
     .footer-logo {
-      max-width: 280px;
+      max-width: 250px;
     }
 
     .footer-logo img {
-      height: 50px;
       margin-bottom: 15px;
     }
 
@@ -503,33 +357,18 @@
 
     .footer-nav a {
       color: #aaa;
-      transition: all 0.3s ease;
-      padding: 5px 0;
-      position: relative;
+      transition: color 0.3s;
     }
 
     .footer-nav a:hover {
       color: white;
-      padding-left: 8px;
-    }
-
-    .footer-nav a:before {
-      content: '›';
-      position: absolute;
-      left: -10px;
-      opacity: 0;
-      transition: all 0.3s ease;
-    }
-
-    .footer-nav a:hover:before {
-      left: 0;
-      opacity: 1;
+      text-decoration: underline;
     }
 
     .copyright {
       width: 100%;
       text-align: center;
-      margin-top: 40px;
+      margin-top: 30px;
       padding-top: 20px;
       border-top: 1px solid #333;
       font-size: 0.9rem;
@@ -537,10 +376,69 @@
     }
 
     /* ============================================
-       RESPONSIVIDADE - BREAKPOINTS
+       BANNER DE COOKIES
+       Baseado em conceitos de [citation:1]
+    ============================================ */
+    .cookie-banner {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 600px;
+      background-color: #2d3748;
+      color: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      z-index: 2000;
+      display: none; /* Será controlado via JS */
+    }
+
+    .cookie-banner p {
+      margin-bottom: 15px;
+    }
+
+    .cookie-banner a {
+      color: #90cdf4;
+      text-decoration: underline;
+    }
+
+    .cookie-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .cookie-btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: opacity 0.3s;
+    }
+
+    .cookie-btn-accept {
+      background-color: #3182ce;
+      color: white;
+    }
+
+    .cookie-btn-reject {
+      background-color: #4a5568;
+      color: white;
+    }
+
+    .cookie-btn:hover {
+      opacity: 0.9;
+    }
+
+    /* ============================================
+       MEDIA QUERIES - RESPONSIVIDADE
+       Referência para breakpoints: [citation:3]
     ============================================ */
 
-    /* TABLETS (768px ou menos) */
+    /* TABLETS (até 768px) */
     @media screen and (max-width: 768px) {
       .main-container {
         flex-direction: column;
@@ -549,150 +447,82 @@
 
       .sidebar {
         width: 100%;
-        position: static;
-        height: auto;
-        order: -1; /* Coloca a sidebar antes do conteúdo em mobile se quiser */
-      }
-
-      .content {
-        padding: 25px;
       }
 
       h1 {
-        font-size: 2rem;
+        font-size: 1.9rem;
       }
 
       h2 {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
       }
     }
 
-    /* SMARTPHONES (600px ou menos) - MENU HAMBÚRGUER ATIVADO */
-    @media screen and (max-width: 600px) {
-      /* BOTÃO HAMBÚRGUER VISÍVEL */
-      .menu-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    /* SMARTPHONES (até 480px) */
+    @media screen and (max-width: 480px) {
+      /* MENU HAMBÚRGUER ATIVADO */
+      .btn-hamburger {
+        display: block; /* Mostra o botão hambúrguer */
       }
 
-      /* MENU ESCONDIDO POR PADRÃO */
       .main-nav {
         position: fixed;
         top: 0;
-        right: -100%;
-        width: 85%;
-        max-width: 320px;
+        right: -100%; /* Esconde o menu fora da tela */
+        width: 80%;
+        max-width: 300px;
         height: 100vh;
-        background: linear-gradient(135deg, var(--primary-color) 0%, #1e3c8a 100%);
-        padding: 80px 25px 30px;
-        transition: right 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-        z-index: 1000;
-        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
+        background-color: #1a3a8f;
+        padding: 80px 30px 30px;
+        transition: right 0.4s ease;
+        z-index: 999;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
         overflow-y: auto;
-        display: block;
       }
 
       .main-nav.active {
-        right: 0;
+        right: 0; /* Traz o menu para a tela */
       }
 
-      /* QUANDO O MENU ABRE, MUDAR ÍCONE PARA X */
-      .main-nav.active ~ .menu-toggle .fa-bars {
-        display: none;
-      }
-
-      .main-nav.active ~ .menu-toggle .fa-times {
-        display: block;
-      }
-
-      /* ESTILOS DA LISTA DO MENU MOBILE */
       .main-nav ul {
         flex-direction: column;
         gap: 0;
       }
 
-      .main-nav li {
-        width: 100%;
-        margin-bottom: 5px;
-      }
-
       .main-nav a {
         display: block;
-        padding: 18px 15px;
-        border-radius: 8px;
+        padding: 15px 10px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        font-size: 1.1rem;
       }
 
-      .main-nav a:hover {
-        background-color: rgba(255, 255, 255, 0.15);
-        transform: translateX(5px);
-      }
-
-      /* OVERLAY ESCURO QUANDO MENU ABRE */
-      .nav-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 999;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-      }
-
-      .nav-overlay.active {
-        opacity: 1;
-        visibility: visible;
-      }
-
-      .container, .content {
-        padding-left: 15px;
-        padding-right: 15px;
-      }
-
-      .article-meta {
-        flex-direction: column;
-        gap: 15px;
-      }
-
-      .footer-container {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .footer-nav {
-        justify-content: center;
-      }
-    }
-
-    /* SMARTPHONES PEQUENOS (480px ou menos) */
-    @media screen and (max-width: 480px) {
       .content, .sidebar {
         padding: 20px;
       }
 
-      h1 {
-        font-size: 1.8rem;
-      }
-
-      .site-title {
-        font-size: 1.5rem;
-      }
-
-      .btn-cta {
-        width: 100%;
+      .footer-container {
+        flex-direction: column;
+        gap: 25px;
         text-align: center;
+      }
+
+      .cookie-banner {
+        bottom: 10px;
+        padding: 15px;
+      }
+
+      .cookie-buttons {
+        flex-direction: column;
+      }
+
+      .cookie-btn {
+        width: 100%;
       }
     }
   </style>
 
   <link rel="canonical" href="https://topofertas.reviewnexus.blog/eletrodomesticos/britania-bfr51">
 
-  <!-- Schema Markup para Product -->
+  <!-- Schema Markup para Product (mantido do seu código original) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -714,31 +544,33 @@
 </head>
 
 <body>
-  <!-- OVERLAY PARA FECHAR MENU (MOBILE) -->
-  <div class="nav-overlay" id="navOverlay"></div>
+  <!-- BANNER DE COOKIES (Será mostrado via JavaScript) -->
+  <div id="cookie-banner" class="cookie-banner">
+    <p>Este site utiliza cookies e tecnologias semelhantes para melhorar sua experiência. Recomenda-se aceitar todos, mas você pode personalizar. <a href="https://topofertas.reviewnexus.blog/pt/politica-de-privacidade/" target="_blank">Política de Privacidade</a></p>
+    <div class="cookie-buttons">
+      <button id="acceptCookies" class="cookie-btn cookie-btn-accept">Aceitar todos</button>
+      <button id="rejectCookies" class="cookie-btn cookie-btn-reject">Rejeitar todos</button>
+    </div>
+  </div>
 
-  <!-- CABEÇALHO -->
+  <!-- CABEÇALHO COM MENU RESPONSIVO -->
   <header>
     <div class="container header-container">
-      <!-- LOGO -->
-      <div class="logo-container">
-      <a href="https://topofertas.reviewnexus.blog/" class="logo">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <path d="M16 10a4 4 0 0 1-8 0"></path>
-        </svg>
-        <h1 class="site-title">Top Ofertas</h1>
-      </a>
-    </div>
+     <div class="logo">
+          <svg class="w-8 h-8 sm:w-10 sm:h-10 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+          <h1 style="color:#fff;font-size:24px;margin:0;">Top Ofertas</h1>
+        </div>
 
-      <!-- BOTÃO HAMBÚRGUER (SÓ VISÍVEL NO MOBILE) -->
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu de navegação">
+      <!-- BOTÃO HAMBÚRGUER (VISÍVEL APENAS NO MOBILE) -->
+      <button class="btn-hamburger" id="menuToggle" aria-label="Abrir menu de navegação">
         <i class="fas fa-bars"></i>
-        <i class="fas fa-times"></i>
       </button>
 
-      <!-- MENU DE NAVEGAÇÃO -->
+      <!-- MENU DE NAVEGAÇÃO PRINCIPAL -->
       <nav class="main-nav" id="mainNav">
         <ul>
           <li><a href="https://topofertas.reviewnexus.blog/">Início</a></li>
@@ -751,22 +583,23 @@
     </div>
   </header>
 
-  <!-- CONTEÚDO PRINCIPAL -->
+  <!-- CONTEÚDO PRINCIPAL COM LAYOUT DE SIDEBAR -->
   <main class="container main-container">
     <!-- ARTIGO PRINCIPAL -->
     <article class="content">
-      <!-- METADADOS -->
+      <!-- METADADOS DO ARTIGO (DATA E AUTOR) -->
       <div class="article-meta">
-        <span class="meta-item"><i class="far fa-calendar-alt"></i> 15 de Dezembro de 2025</span>
-        <span class="meta-item"><i class="far fa-user"></i> Equipe Top Ofertas</span>
-        <span class="meta-item"><i class="far fa-clock"></i> 8 min de leitura</span>
+        <span><i class="far fa-calendar-alt"></i> Publicado em: 15 de Dezembro de 2025</span>
+        <span><i class="far fa-user"></i> Autor: Equipe Top Ofertas</span>
+        <span><i class="far fa-clock"></i> Tempo de leitura: 8 min</span>
       </div>
 
       <h1>Britânia Air Fryer BFR51 5,5L vale a pena comprar? Análise Completa</h1>
 
-      <img src="https://topofertas.reviewnexus.blog/assets/img/eletrodomesticos/britania-bfr51.jpg" alt="Britânia BFR51 Air Fryer 5,5L" class="featured-image">
+      <!-- IMAGEM DESTACADA DO PRODUTO -->
+      <img src="https://topofertas.reviewnexus.blog/assets/img/eletrodomesticos/britania-bfr51.jpg" alt="Britânia BFR51 Air Fryer 5,5L antiaderente gold na cor preta, destacando seu design moderno e cesto espaçoso em um ambiente de cozinha iluminado." class="featured-image">
 
-    <!-- SUMÁRIO (TOC) -->
+      <!-- SUMÁRIO (TOC) -->
       <div class="toc">
         <h2>📚 Sumário</h2>
         <ul>
@@ -827,75 +660,77 @@
 
       <h2 id="veredicto-final">Veredito Final: Britânia BFR51 é o Achadinho Que Você Precisa?</h2>
       <p>Depois de analisar cada detalhe, dos materiais à performance e às experiências dos usuários, podemos concluir que a Britânia Air Fryer BFR51 5,5L antiaderente gold é, de fato, um achadinho excepcional. Ela oferece uma combinação rara de alta capacidade, potência eficiente, durabilidade notável e um design que valoriza qualquer cozinha. Para famílias que buscam capacidade e durabilidade, ou para qualquer pessoa que deseja uma alimentação mais saudável e prática sem complicação, este modelo da Britânia se apresenta como uma escolha inteligente e acessível. Esqueça o óleo, a sujeira e o trabalho de fritar em fogão; a Britânia BFR51 transforma a sua rotina culinária, entregando pratos saborosos e saudáveis com a máxima conveniência. Se você ainda estava em dúvida se a <strong>Britânia Air Fryer BFR51 5,5L vale a pena comprar</strong>, a resposta é um sonoro sim!</p>
-      <p>Não perca a chance de levar essa inovação para sua casa e revolucionar suas refeições. A praticidade e o sabor estão a um clique de distância!</p>t
+      <p>Não perca a chance de levar essa inovação para sua casa e revolucionar suas refeições. A praticidade e o sabor estão a um clique de distância!</p>
 
+      <!-- AVALIAÇÃO DOS LEITORES -->
       <div style="text-align: center; margin: 30px 0; padding: 20px; border: 1px dashed #ccc; border-radius: 8px;">
         <h2>Avaliação Média dos Leitores</h2>
-        <div style="color: gold; font-size: 2.5em; letter-spacing: 5px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div style="color: gold; font-size: 2.5em; letter-spacing: 5px;">
+            &#9733;&#9733;&#9733;&#9733;&#9733; </div>
         <p style="margin-top: 10px; font-size: 1.1em;">Nota 4.8 de 5 (Baseado em mais de 112 avaliações)</p>
       </div>
 
+      <!-- CALL-TO-ACTION FINAL -->
       <section class="cta">
         <h2>Experimente Britânia BFR51 Agora</h2>
-        <p>Acesse a página oficial e garanta a melhor oferta com garantia do fabricante:</p>
+        <p>Acesse a página oficial e garanta a melhor oferta da Britânia BFR51 com a garantia do fabricante:</p>
         <a class="btn-cta" href="https://go.reviewnexus.blog/cozinha/britania-air-fryer" target="_blank" rel="nofollow noopener">👉 Comprar com desconto</a>
       </section>
     </article>
 
-    <!-- SIDEBAR FIXA -->
+    <!-- SIDEBAR LATERAL -->
     <aside class="sidebar">
-      <!-- WIDGET OFERTA DO DIA -->
-      <div class="widget offer-widget">
-        <div class="offer-tag">OFERTA RELÂMPAGO</div>
-        <h3>Britânia BFR51 com 15% OFF!</h3>
-        <p><strong>Promoção válida por tempo limitado</strong></p>
-        <p>Frete grátis para todo Brasil + 12 meses de garantia</p>
-        <a href="https://go.reviewnexus.blog/cozinha/britania-air-fryer" class="btn-cta" style="display: block; margin-top: 15px;">Aproveitar Agora</a>
+      <!-- WIDGET: OFERTA DO DIA -->
+      <div class="widget">
+        <h3 class="widget-title"><i class="fas fa-bolt"></i> Oferta do Dia</h3>
+        <p><strong>Britânia BFR51 com 15% OFF!</strong></p>
+        <p>Promoção válida apenas por hoje. Frete grátis para todo Brasil.</p>
+        <a href="https://go.reviewnexus.blog/cozinha/britania-air-fryer" class="btn-cta" style="display: block; text-align: center; margin-top: 10px;">Aproveitar Oferta</a>
       </div>
 
-      <!-- WIDGET PRODUTOS RELACIONADOS -->
+      <!-- WIDGET: PRODUTOS RELACIONADOS -->
       <div class="widget">
-        <h3 class="widget-title"><i class="fas fa-link"></i> Comparar com</h3>
+        <h3 class="widget-title"><i class="fas fa-link"></i> Produtos Relacionados</h3>
         <div class="related-product">
-          <img src="https://images.unsplash.com/photo-1626814026220-1d3e6c0c4a8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Air Fryer Mondial">
+          <img src="https://images.unsplash.com/photo-1626814026221-d0e2c6e42201?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Air Fryer Mondial">
           <div>
-            <strong>Mondial AFN-40</strong><br>
-            <small>Capacidade 4.2L • 1400W</small>
+            <strong>Air Fryer Mondial</strong><br>
+            <small>Capacidade 4.2L</small>
           </div>
         </div>
         <div class="related-product">
-          <img src="https://images.unsplash.com/photo-1628595351029-c2bf17511435?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Air Fryer Philips">
+          <img src="https://images.unsplash.com/photo-1628595351029-c2bf17511435?ixlib=rb-4.0.3&auto=format&fit=crop&w-150&q=80" alt="Air Fryer Philips Walita">
           <div>
             <strong>Philips Walita</strong><br>
-            <small>Capacidade 3.5L • TurboStar</small>
+            <small>Capacidade 3.5L</small>
           </div>
         </div>
         <div class="related-product">
           <img src="https://images.unsplash.com/photo-1615873968403-89e068629265?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Air Fryer Oster">
           <div>
-            <strong>Oster 5.0L</strong><br>
-            <small>Capacidade 5.0L • Digital</small>
+            <strong>Oster</strong><br>
+            <small>Capacidade 5.0L</small>
           </div>
         </div>
       </div>
 
-      <!-- WIDGET LINKS IMPORTANTES -->
+      <!-- WIDGET: LINKS RÁPIDOS (POLÍTICAS E TERMOS) -->
       <div class="widget">
-        <h3 class="widget-title"><i class="fas fa-file-contract"></i> Links do Site</h3>
+        <h3 class="widget-title"><i class="fas fa-file-contract"></i> Links Importantes</h3>
         <ul style="list-style: none; padding-left: 5px;">
-          <li><i class="fas fa-chevron-right" style="color: var(--accent-color);"></i> <a href="https://topofertas.reviewnexus.blog/pt/politica-de-privacidade/">Política de Privacidade</a></li>
-          <li><i class="fas fa-chevron-right" style="color: var(--accent-color);"></i> <a href="https://topofertas.reviewnexus.blog/pt/termos-de-servico/">Termos de Serviço</a></li>
-          <li><i class="fas fa-chevron-right" style="color: var(--accent-color);"></i> <a href="https://topofertas.reviewnexus.blog/pt/divulgacao-de-afiliados/">Divulgação de Afiliado</a></li>
-          <li><i class="fas fa-chevron-right" style="color: var(--accent-color);"></i> <a href="https://topofertas.reviewnexus.blog/pt/contato/">Contato</a></li>
-          <li><i class="fas fa-chevron-right" style="color: var(--accent-color);"></i> <a href="https://topofertas.reviewnexus.blog/pt/sobre-nos/">Sobre Nós</a></li>
+          <li><i class="fas fa-chevron-right"></i> <a href="https://topofertas.reviewnexus.blog/pt/politica-de-privacidade/">Política de Privacidade</a></li>
+          <li><i class="fas fa-chevron-right"></i> <a href="https://topofertas.reviewnexus.blog/pt/termos-de-servico/">Termos de Serviço</a></li>
+          <li><i class="fas fa-chevron-right"></i> <a href="https://topofertas.reviewnexus.blog/pt/divulgacao-de-afiliados/">Divulgação de Afiliado</a></li>
+          <li><i class="fas fa-chevron-right"></i> <a href="https://topofertas.reviewnexus.blog/pt/contato/">Contato</a></li>
+          <li><i class="fas fa-chevron-right"></i> <a href="https://topofertas.reviewnexus.blog/pt/sobre-nos/">Sobre Nós</a></li>
         </ul>
       </div>
 
-      <!-- WIDGET CTA -->
-      <div class="widget" style="text-align: center; background: #f0f7ff; border-radius: 12px; padding: 20px;">
-        <h3><i class="fas fa-gift" style="color: var(--accent-color);"></i> E-book Grátis</h3>
-        <p>50 receitas saudáveis para Air Fryer!</p>
-        <button style="background: var(--primary-color); color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; margin-top: 15px; font-weight: bold; transition: all 0.3s;">Quero o E-book</button>
+      <!-- WIDGET: CTA LATERAL -->
+      <div class="widget sidebar-cta">
+        <h3><i class="fas fa-gift"></i> Guia Grátis</h3>
+        <p>Baixe nosso e-book com 50 receitas saudáveis para Air Fryer!</p>
+        <button style="background: #1a3a8f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-top: 10px;">Quero o E-book</button>
       </div>
     </aside>
   </main>
@@ -904,8 +739,8 @@
   <footer>
     <div class="container footer-container">
       <div class="footer-logo">
-        <img src="https://topofertas.reviewnexus.blog/assets/img/logo-branco.png" alt="Logo" style="height: 50px;" onerror="this.style.display='none'">
-        <p>Análises honestas para você fazer a melhor escolha de compra.</p>
+        <img src="https://topofertas.reviewnexus.blog/assets/img/logo-branco.png" alt="Logo Top Ofertas Branco" style="height: 40px;" onerror="this.style.display='none'">
+        <p>Análises independentes para você fazer a melhor escolha.</p>
       </div>
       <nav class="footer-nav">
         <a href="https://topofertas.reviewnexus.blog/pt/politica-de-privacidade/">Política de Privacidade</a>
@@ -920,54 +755,72 @@
     </div>
   </footer>
 
-  <!-- SCRIPT DO MENU HAMBÚRGUER FUNCIONAL -->
+  <!-- SCRIPT PARA O MENU HAMBÚRGUER E COOKIES -->
   <script>
-    // MENU HAMBÚRGUER - AGORA FUNCIONANDO
+    // ============================================
+    // MENU HAMBÚRGUER RESPONSIVO
+    // Baseado no conceito de [citation:3]
+    // ============================================
     const menuToggle = document.getElementById('menuToggle');
     const mainNav = document.getElementById('mainNav');
-    const navOverlay = document.getElementById('navOverlay');
-    const body = document.body;
 
-    menuToggle.addEventListener('click', function(e) {
-      e.stopPropagation();
+    menuToggle.addEventListener('click', function() {
       mainNav.classList.toggle('active');
-      navOverlay.classList.toggle('active');
-      
-      // Previne scroll quando menu aberto
+      // Altera o ícone do botão
+      const icon = this.querySelector('i');
       if (mainNav.classList.contains('active')) {
-        body.style.overflow = 'hidden';
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
       } else {
-        body.style.overflow = '';
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
       }
     });
 
-    // FECHA MENU AO CLICAR NO OVERLAY
-    navOverlay.addEventListener('click', function() {
-      mainNav.classList.remove('active');
-      navOverlay.classList.remove('active');
-      body.style.overflow = '';
-    });
-
-    // FECHA MENU AO CLICAR EM UM LINK (MOBILE)
+    // Fecha o menu ao clicar em um link (para mobile)
     const navLinks = document.querySelectorAll('.main-nav a');
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
         mainNav.classList.remove('active');
-        navOverlay.classList.remove('active');
-        body.style.overflow = '';
+        menuToggle.querySelector('i').classList.remove('fa-times');
+        menuToggle.querySelector('i').classList.add('fa-bars');
       });
     });
 
-    // FECHA MENU AO REDIMENSIONAR A TELA (se voltar para desktop)
-    window.addEventListener('resize', function() {
-      if (window.innerWidth > 600) {
-        mainNav.classList.remove('active');
-        navOverlay.classList.remove('active');
-        body.style.overflow = '';
-      }
+    // ============================================
+    // BANNER DE COOKIES SIMPLIFICADO
+    // Inspirado por [citation:1] e [citation:6]
+    // ============================================
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptCookies = document.getElementById('acceptCookies');
+    const rejectCookies = document.getElementById('rejectCookies');
+
+    // Verifica se o usuário já fez uma escolha
+    if (!localStorage.getItem('cookiesAccepted')) {
+      // Mostra o banner após 1 segundo
+      setTimeout(() => {
+        cookieBanner.style.display = 'block';
+      }, 1000);
+    }
+
+    // Quando o usuário aceita
+    acceptCookies.addEventListener('click', function() {
+      localStorage.setItem('cookiesAccepted', 'true');
+      cookieBanner.style.display = 'none';
+      // Aqui você poderia carregar scripts de terceiros, como Google Analytics
+      console.log('Cookies aceitos.');
+    });
+
+    // Quando o usuário rejeita
+    rejectCookies.addEventListener('click', function() {
+      localStorage.setItem('cookiesAccepted', 'false');
+      cookieBanner.style.display = 'none';
+      // Aqui você garantiria que cookies não essenciais não sejam setados
+      console.log('Cookies rejeitados.');
     });
   </script>
 
+  <!-- Link para o seu script global (se existir) -->
   <script src="https://topofertas.reviewnexus.blog/assets/js/script.js" defer></script>
 </body>
 </html>

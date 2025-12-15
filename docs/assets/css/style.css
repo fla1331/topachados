@@ -20,10 +20,30 @@
     text-align: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+ a.logo{display:flex;align-items:center;gap:12px; color: initial !important;}
+    .logo svg{width:48px;height:48px;}
+
+
 /*logo*/
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo svg {
+  width: 32px;
+  height: 32px;
+  stroke: white;
+  fill: white;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover svg {
+  transform: scale(1.1);
+}
   .logo-container {
-            box-shadow: 0 15px 30px rgba(10, 30, 50, 0.15); /* Sombra mais destacada */
-            background-image: linear-gradient(145deg, #ffffff, #f9f9ff);
+    
         }
 
         /* Estilo da lupa/pin */
@@ -148,7 +168,8 @@
     margin-top: 40px;
     font-size: 0.9em;
 }footer p {
-    margin-bottom: 10px;
+    margin-bottom: 10px;text-align: center;
+    font-size: 13px;
 }.footer-nav a {
     color: #ecf0f1;
     margin: 0 10px;
