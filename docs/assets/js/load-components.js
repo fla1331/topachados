@@ -1,33 +1,50 @@
-// VERSÃO SIMPLIFICADA E CONFIÁVEL
-document.addEventListener('DOMContentLoaded', function() {
-  // Lista de componentes para carregar
-  const componentes = [
-    { id: 'header-container', arquivo: 'includes/header.html' },
-    { id: 'footer-placeholder', arquivo: 'includes/footer.html' }
-  ];
+// load-components-failproof.js
+(function() {
+  'use strict';
   
-  // Carrega cada componente
-  componentes.forEach(function(componente) {
-    if (document.getElementById(componente.id)) {
-      fetch(componente.arquivo)
-        .then(resposta => {
-          if (!resposta.ok) {
-            throw new Error(`Arquivo não encontrado: ${componente.arquivo}`);
+  const COMPONENTS = {
+    'header-container': 'includes/header.html',
+    'footer-placeholder': 'includes/footer.html'
+  };
+  
+  function loadComponent(id, url) {
+    return new Promise((resolve, reject) => {
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', url, true);
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            resolve(xhr.responseText);
+          } else {
+            reject(new Error(`HTTP ${xhr.status}: ${url}`));
           }
-          return resposta.text();
-        })
-        .then(html => {
-          document.getElementById(componente.id).innerHTML = html;
-          console.log(`✅ ${componente.id} carregado`);
-        })
-        .catch(erro => {
-          console.error(`❌ Erro no ${componente.id}:`, erro);
-          // Fallback: mostra uma mensagem se não carregar
-          document.getElementById(componente.id).innerHTML = 
-            `<div style="padding: 20px; background: #ffebee; color: #c62828;">
-               Erro ao carregar ${componente.id}. Verifique se o arquivo ${componente.arquivo} existe.
-             </div>`;
-        });
-    }
+        }
+      };
+      xhr.send();
+    });
+  }
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    Object.entries(COMPONENTS).forEach(([id, url]) => {
+      const element = document.getElementById(id);
+      if (element) {
+        loadComponent(id, url)
+          .then(html => {
+            element.innerHTML = html;
+            console.log(`✓ ${id} loaded`);
+          })
+          .catch(error => {
+            console.warn(`✗ ${id} failed:`, error.message);
+            // Mostra link para debug
+            element.innerHTML = `
+              <div style="border: 2px dashed red; padding: 10px; margin: 10px;">
+                <p><strong>Erro ao carregar ${id}</strong></p>
+                <p>Tentou carregar: ${url}</p>
+                <p><a href="${url}" target="_blank">Clique para testar se o arquivo existe</a></p>
+              </div>
+            `;
+          });
+      }
+    });
   });
-});
+})();
