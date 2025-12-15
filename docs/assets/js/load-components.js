@@ -56,9 +56,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   
   // Define quais componentes carregar
   const pageComponents = {
-    'header-container': '/includes/header.html',
-    'sidebar-container': '/includes/sidebar.html',
-    'footer-container': '/includes/footer.html'
+    'header-container': 'includes/header.html',
+    'sidebar-container': 'includes/sidebar.html',
+    'footer-container': 'includes/footer.html'
   };
   
   // Carrega todos os componentes
