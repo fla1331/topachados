@@ -1,15 +1,9 @@
-// CONFIGURAÇÃO DOS CAMINHOS - AJUSTE CONFORME SUA ESTRUTURA
 window.SITE_CONFIG = {
-  // URL base do seu site (IMPORTANTE!)
-  baseUrl: 'https://topofertas.reviewnexus.blog',
-  
-  // Caminhos dos componentes (usando caminhos absolutos)
+  // Caminhos RELATIVOS a partir da pasta docs/
   components: {
-    header: '/includes/header.html',
-    footer: '/includes/footer.html',
-    sidebar: '/includes/sidebar.html'
+    header: 'includes/header.html',     // SEM barra no início!
+    footer: 'includes/footer.html',     // SEM barra no início!
+    sidebar: 'includes/sidebar.html'    // SEM barra no início!
   },
-  
-  // Debug mode
   debug: true
 };
