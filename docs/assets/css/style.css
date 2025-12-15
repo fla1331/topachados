@@ -176,12 +176,14 @@
 }.footer-nav a:hover {
     color: #3498db;
     text-decoration: underline;
-}/* Cookie Banner */.cookie-banner {
+}
+
+/* Cookie Banner */.cookie-banner {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #333;
+    background-color:  var(--primary-color);
     color: #fff;
     padding: 15px 20px;
     text-align: center;
@@ -199,8 +201,8 @@
     color: #87CEEB; /* Light blue for cookie link */
     text-decoration: underline;
 }.cookie-banner button {
-    background-color: #28a745; /* Green for accept */
-    color: white;
+    background-color: var(--accent-color); /* Green for accept */
+    color: 
     border: none;
     padding: 8px 15px;
     border-radius: 5px;
@@ -208,7 +210,7 @@
     font-size: 0.9em;
     transition: background-color 0.3s ease;
 }.cookie-banner button:hover {
-    background-color: #218838;
+
 }#declineCookies {
     background-color: #dc3545; /* Red for decline */
 }#declineCookies:hover {
