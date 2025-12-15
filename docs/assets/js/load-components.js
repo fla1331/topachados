@@ -1,74 +1,33 @@
-// Sistema de carregamento de componentes
-class ComponentLoader {
-  constructor() {
-    this.components = {};
-  }
+// VERSÃO SIMPLIFICADA E CONFIÁVEL
+document.addEventListener('DOMContentLoaded', function() {
+  // Lista de componentes para carregar
+  const componentes = [
+    { id: 'header-container', arquivo: 'includes/header.html' },
+    { id: 'footer-placeholder', arquivo: 'includes/footer.html' }
+  ];
   
-  // Carrega um componente
-  async load(componentId, filePath) {
-    try {
-      const response = await fetch(filePath);
-      if (!response.ok) throw new Error(`Arquivo não encontrado: ${filePath}`);
-      
-      const html = await response.text();
-      const element = document.getElementById(componentId);
-      
-      if (element) {
-        element.innerHTML = html;
-        this.components[componentId] = true;
-        console.log(`✅ Componente carregado: ${componentId}`);
-        
-        // Executa scripts dentro do componente
-        this.executeScripts(element);
-      } else {
-        console.warn(`⚠️ Elemento #${componentId} não encontrado`);
-      }
-    } catch (error) {
-      console.error(`❌ Erro ao carregar ${componentId}:`, error);
+  // Carrega cada componente
+  componentes.forEach(function(componente) {
+    if (document.getElementById(componente.id)) {
+      fetch(componente.arquivo)
+        .then(resposta => {
+          if (!resposta.ok) {
+            throw new Error(`Arquivo não encontrado: ${componente.arquivo}`);
+          }
+          return resposta.text();
+        })
+        .then(html => {
+          document.getElementById(componente.id).innerHTML = html;
+          console.log(`✅ ${componente.id} carregado`);
+        })
+        .catch(erro => {
+          console.error(`❌ Erro no ${componente.id}:`, erro);
+          // Fallback: mostra uma mensagem se não carregar
+          document.getElementById(componente.id).innerHTML = 
+            `<div style="padding: 20px; background: #ffebee; color: #c62828;">
+               Erro ao carregar ${componente.id}. Verifique se o arquivo ${componente.arquivo} existe.
+             </div>`;
+        });
     }
-  }
-  
-  // Executa scripts dentro do componente carregado
-  executeScripts(container) {
-    const scripts = container.querySelectorAll('script');
-    scripts.forEach(oldScript => {
-      const newScript = document.createElement('script');
-      Array.from(oldScript.attributes).forEach(attr => {
-        newScript.setAttribute(attr.name, attr.value);
-      });
-      newScript.textContent = oldScript.textContent;
-      oldScript.parentNode.replaceChild(newScript, oldScript);
-    });
-  }
-  
-  // Carrega múltiplos componentes
-  async loadMultiple(components) {
-    const promises = Object.entries(components).map(([id, path]) => 
-      this.load(id, path)
-    );
-    await Promise.all(promises);
-  }
-}
-
-// Uso fácil na página:
-document.addEventListener('DOMContentLoaded', async () => {
-  const loader = new ComponentLoader();
-  
-  // Define quais componentes carregar
-  const pageComponents = {
-    'header-container': 'includes/header.html',
-    'sidebar-container': 'includes/sidebar.html',
-    'footer-container': 'includes/footer.html'
-  };
-  
-  // Carrega todos os componentes
-  await loader.loadMultiple(pageComponents);
-  
-  // Ativa menu mobile (exemplo)
-  const menuBtn = document.querySelector('.mobile-menu-btn');
-  if (menuBtn) {
-    menuBtn.addEventListener('click', () => {
-      document.querySelector('.main-nav').classList.toggle('active');
-    });
-  }
+  });
 });
