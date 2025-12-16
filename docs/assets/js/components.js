@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Mapeamento ID -> URL (caminhos relativos)
     const componentsMap = {
-        'header-container': config.components.header,
+        'header-placeholder': config.components.header,
         'footer-placeholder': config.components.footer,
         'sidebar-container': config.components.sidebar
     };
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 executeScripts(element);
                 
                 // Inicializar componentes específicos
-                if (id === 'header-container') {
+                if (id === 'header-placeholder') {
                     initHeader();
                 }
                 if (id === 'sidebar-container') {
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // HTML de fallback para cada componente
     function getFallbackHTML(id, url) {
         const fallbacks = {
-            'header-container': `
+            'header-placeholder': `
                 <header class="site-header">
                     <div class="header-content">
                         <a href="/" class="logo">
