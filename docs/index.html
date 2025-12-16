@@ -57,28 +57,15 @@
     .menu-btn{display:block;}}
   </style>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-
+ <script src="https://topofertas.reviewnexus.blog/assets/js/components.js"></script>
 </head>
 <body>
-  <header id="topo">
-    <div class="logo">
-          <svg class="w-8 h-8 sm:w-10 sm:h-10 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <path d="M16 10a4 4 0 0 1-8 0"></path>
-            </svg>
-          <h1 style="color:#fff;font-size:24px;margin:0;">Top Ofertas</h1>
-        </div>
-    <div class="menu-btn" onclick="document.getElementById('topo').classList.toggle('open')">
-      <div></div><div></div><div></div>
-    </div>
-    <nav>
-      <a href="#home">Início</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#posts">Posts</a>
-      <a href="#contato">Contato</a>
-    </nav>
-  </header>
+ 
+   <!-- OVERLAY PARA FECHAR MENU (MOBILE) -->
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <div id="header-placeholder"></div>
+
 
   <section class="hero" id="home">
       <video autoplay muted loop playsinline class="hero-video">
@@ -181,14 +168,7 @@
     </div>
   </section>
 
-  <footer style="background:#222;color:#ccc;text-align:center;padding:40px 20px;margin-top:40px;">
-    <p>© 2024 Top Ofertas - Todos os direitos reservados.</p>
-    <p>
-      <a href="#" style="color:#ccc;margin:0 10px;text-decoration:none;">Política de Privacidade</a> |
-      <a href="#" style="color:#ccc;margin:0 10px;text-decoration:none;">Termos de Uso</a> |
-     
-    </p>
-  </footer>
+   <div id="footer-placeholder"></div>
 
 <script>
     document.querySelectorAll('nav a').forEach(link=>{
