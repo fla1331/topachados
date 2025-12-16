@@ -1,5 +1,5 @@
 /**
- * COMPONENTES DINÂMICOS - VERSÃO PARA SEU HEADER
+ * COMPONENTES DINÂMICOS 
  */
 (function() {
     'use strict';
@@ -7,9 +7,12 @@
     document.addEventListener('DOMContentLoaded', function() {
         console.log('🚀 Iniciando componentes dinâmicos...');
         
-        // Carrega componentes
+        // Carrega componentes principais
         loadComponent('header-placeholder', 'includes/header.html', initHeader);
         loadComponent('footer-placeholder', 'includes/footer.html');
+        
+        // Carrega sidebar como conteúdo estático (SEM inicialização)
+        loadComponent('sidebar-placeholder', 'includes/sidebar.html');
     });
     
     async function loadComponent(elementId, filePath, onSuccess) {
@@ -43,7 +46,7 @@
                         oldScript.parentNode.replaceChild(newScript, oldScript);
                     });
                     
-                    // Callback de sucesso
+                    // Callback de sucesso (só para header)
                     if (onSuccess) onSuccess();
                     return;
                 }
