@@ -44,37 +44,7 @@
   <!-- OVERLAY PARA FECHAR MENU (MOBILE) -->
   <div class="nav-overlay" id="navOverlay"></div>
 
-  <!-- CABEÇALHO -->
-  <header>
-    <div class="container header-container">
-      <!-- LOGO -->
-      <div class="logo-container">
-      <a href="https://topofertas.reviewnexus.blog/" class="logo">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff" stroke="#1a3a8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <path d="M16 10a4 4 0 0 1-8 0"></path>
-        </svg>
-        <h1 class="site-title">Top Ofertas</h1>
-      </a>
-    </div>
-
-      <!-- BOTÃO HAMBÚRGUER (SÓ VISÍVEL NO MOBILE) -->
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu de navegação">
-        <i class="fas fa-bars"></i>
-        <i class="fas fa-times"></i>
-      </button>
-
-      <!-- MENU DE NAVEGAÇÃO -->
-      <nav class="main-nav" id="mainNav">
-        <ul>
-          <li><a href="https://topofertas.reviewnexus.blog/">Início</a></li>
-          <li><a href="https://topofertas.reviewnexus.blog/sobre-nos">Sobre Nós</a></li>  
-          <li><a href="https://topofertas.reviewnexus.blog/contato">Contato</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <div id="header-placeholder"></div>
 
   <!-- CONTEÚDO PRINCIPAL -->
  <main class="container main-container">
@@ -198,6 +168,65 @@
       </div>
     </aside>
   </main>
-    <div id="footer-placeholder"></div>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- SCRIPT DO MENU HAMBÚRGUER FUNCIONAL -->
+  <script>
+    // MENU HAMBÚRGUER - AGORA FUNCIONANDO
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+    const navOverlay = document.getElementById('navOverlay');
+    const body = document.body;
+
+    menuToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      mainNav.classList.toggle('active');
+      navOverlay.classList.toggle('active');
+      
+      // Previne scroll quando menu aberto
+      if (mainNav.classList.contains('active')) {
+        body.style.overflow = 'hidden';
+      } else {
+        body.style.overflow = '';
+      }
+    });
+
+    // FECHA MENU AO CLICAR NO OVERLAY
+    navOverlay.addEventListener('click', function() {
+      mainNav.classList.remove('active');
+      navOverlay.classList.remove('active');
+      body.style.overflow = '';
+    });
+
+    // FECHA MENU AO CLICAR EM UM LINK (MOBILE)
+    const navLinks = document.querySelectorAll('.main-nav a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('active');
+        navOverlay.classList.remove('active');
+        body.style.overflow = '';
+      });
+    });
+
+    // FECHA MENU AO REDIMENSIONAR A TELA (se voltar para desktop)
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 600) {
+        mainNav.classList.remove('active');
+        navOverlay.classList.remove('active');
+        body.style.overflow = '';
+      }
+    });
+  </script>
+
+   <!-- Cookie Banner -->
+  <div id="cookie-banner" class="cookie-banner">
+    <p>Usamos cookies para melhorar sua experiência de navegação <a href="https://topofertas.reviewnexus.blog/politica-de-privacidade>Saiba mais</a>.</p>
+    <button id="acceptCookies">Aceitar</button>
+    <button id="declineCookies">Recusar</button>
+  </div>
+
+
+  <script src="https://topofertas.reviewnexus.blog/assets/js/script.js" defer></script>
 </body>
 </html>

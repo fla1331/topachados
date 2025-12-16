@@ -13,6 +13,9 @@
         
         // Carrega sidebar como conteúdo estático (SEM inicialização)
         loadComponent('sidebar-placeholder', 'includes/sidebar.html');
+
+        // Carrega cookie banner
+        loadComponent('cookie-banner-placeholder', 'includes/cookie-banner.html');
     });
     
     async function loadComponent(elementId, filePath, onSuccess) {
