@@ -1,197 +1,130 @@
-// (docs/)
+// COMPONENTES DINÂMICOS - IDs CORRETOS
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('(docs/) - Carregando componentes...');
+    console.log('🚀 Iniciando carregamento de componentes...');
     
-    // Configuração padrão para docs/
-    const config = window.SITE_CONFIG || {
-        baseUrl: '',
-        components: {
-            header: 'includes/header.html',
-            footer: 'includes/footer.html',
-            sidebar: 'includes/sidebar.html'
-        }
+    // CONFIGURAÇÃO - Caminhos RELATIVOS
+    const config = {
+        header: './includes/header.html',
+        footer: './includes/footer.html',
+        sidebar: './includes/sidebar.html'
     };
     
-    // Mapeamento ID -> URL (caminhos relativos)
-    const componentsMap = {
-        'header-placeholder': config.components.header,
-        'footer-placeholder': config.components.footer,
-        'sidebar-container': config.components.sidebar
-    };
-    
-    // Carrega todos os componentes
-    Object.entries(componentsMap).forEach(([id, url]) => {
-        const element = document.getElementById(id);
-        if (!element) {
-            console.warn(`⚠️ Elemento #${id} não encontrado (pode ser opcional)`);
-            return;
-        }
-        
-        // URL relativa considerando baseUrl
-        const fullUrl = config.baseUrl ? `${config.baseUrl}/${url}` : url;
-        
-        fetch(fullUrl)
+    // 1. CARREGAR HEADER (ID: header-placeholder)
+    const headerPlaceholder = document.getElementById('header-placeholder');
+    if (headerPlaceholder) {
+        console.log('📌 Carregando header...');
+        fetch(config.header)
             .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP ${response.status}: ${fullUrl}`);
-                }
+                if (!response.ok) throw new Error(`HTTP ${response.status}: ${config.header}`);
                 return response.text();
             })
             .then(html => {
-                element.innerHTML = html;
-                console.log(`✅ ${id} carregado de ${fullUrl}`);
-                
-                // Executa scripts dentro do componente
-                executeScripts(element);
-                
-                // Inicializar componentes específicos
-                if (id === 'header-placeholder') {
-                    initHeader();
-                }
-                if (id === 'sidebar-container') {
+                headerPlaceholder.innerHTML = html;
+                console.log('✅ Header carregado!');
+                initHeader();
+            })
+            .catch(error => {
+                console.error('❌ Erro no header:', error.message);
+                headerPlaceholder.innerHTML = `
+                    <div style="background:#2c3e50;color:white;padding:15px;">
+                        <a href="./" style="color:white;text-decoration:none;">TopOfertas</a>
+                        <small style="display:block;color:#bdc3c7;">Erro: ${error.message}</small>
+                    </div>
+                `;
+            });
+    }
+    
+    // 2. CARREGAR FOOTER (ID: footer-placeholder)
+    const footerPlaceholder = document.getElementById('footer-placeholder');
+    if (footerPlaceholder) {
+        console.log('📌 Carregando footer...');
+        fetch(config.footer)
+            .then(response => {
+                if (!response.ok) throw new Error(`HTTP ${response.status}: ${config.footer}`);
+                return response.text();
+            })
+            .then(html => {
+                footerPlaceholder.innerHTML = html;
+                console.log('✅ Footer carregado!');
+                initFooter();
+            })
+            .catch(error => {
+                console.error('❌ Erro no footer:', error.message);
+                footerPlaceholder.innerHTML = `
+                    <footer style="background:#34495e;color:white;padding:20px;text-align:center;">
+                        <p>&copy; ${new Date().getFullYear()} TopOfertas</p>
+                        <small style="color:#bdc3c7;">Erro ao carregar footer</small>
+                    </footer>
+                `;
+            });
+    }
+    
+    // 3. CARREGAR SIDEBAR (ID: sidebar-container - se existir)
+    const sidebarContainer = document.getElementById('sidebar-container');
+    if (sidebarContainer) {
+        console.log('📌 Carregando sidebar...');
+        fetch(config.sidebar)
+            .then(response => {
+                if (!response.ok) return ''; // Sidebar é opcional
+                return response.text();
+            })
+            .then(html => {
+                if (html) {
+                    sidebarContainer.innerHTML = html;
+                    console.log('✅ Sidebar carregado!');
                     initSidebar();
                 }
             })
             .catch(error => {
-                console.error(`❌ Erro ao carregar ${id}:`, error.message);
-                
-                // Fallback baseado no ID
-                element.innerHTML = getFallbackHTML(id, url);
+                console.warn('⚠️ Sidebar opcional não carregada');
             });
-    });
-    
-    // Função para executar scripts dentro do HTML carregado
-    function executeScripts(container) {
-        const scripts = container.querySelectorAll('script');
-        scripts.forEach(oldScript => {
-            const newScript = document.createElement('script');
-            
-            // Copiar atributos
-            Array.from(oldScript.attributes).forEach(attr => {
-                newScript.setAttribute(attr.name, attr.value);
-            });
-            
-            // Copiar conteúdo
-            newScript.textContent = oldScript.textContent;
-            
-            // Substituir script
-            oldScript.parentNode.replaceChild(newScript, oldScript);
-        });
     }
     
-    // Função para inicializar o header
+    // FUNÇÕES DE INICIALIZAÇÃO
     function initHeader() {
-        console.log('Inicializando header...');
-        
-        // Menu mobile toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        console.log('🔧 Inicializando header...');
+        const mobileBtn = document.getElementById('mobile-menu-btn');
         const navMenu = document.getElementById('nav-menu');
         
-        if (mobileMenuBtn && navMenu) {
-            mobileMenuBtn.addEventListener('click', function() {
+        if (mobileBtn && navMenu) {
+            mobileBtn.addEventListener('click', function() {
                 navMenu.classList.toggle('active');
-                mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
+                this.innerHTML = navMenu.classList.contains('active') 
                     ? '<i class="fas fa-times"></i>' 
                     : '<i class="fas fa-bars"></i>';
             });
         }
         
-        // Marcar link ativo baseado na URL atual
+        // Marcar link ativo
         const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-        const navLinks = document.querySelectorAll('.nav-link');
-        
-        navLinks.forEach(link => {
+        document.querySelectorAll('.nav-link').forEach(link => {
             const href = link.getAttribute('href');
             if (href === currentPage || 
-                (currentPage === '' && href === 'index.html') ||
-                (currentPage === 'index.html' && href === '')) {
+                (currentPage === '' && href === './index.html') ||
+                (href && href.includes(currentPage.replace('.html', '')))) {
                 link.classList.add('active');
             }
         });
     }
     
-    // Função para inicializar o sidebar
-    function initSidebar() {
-        console.log('Inicializando sidebar...');
-        
-        // Toggle sidebar no mobile
-        const sidebarToggle = document.getElementById('sidebar-toggle');
-        const sidebar = document.getElementById('sidebar');
-        
-        if (sidebarToggle && sidebar) {
-            sidebarToggle.addEventListener('click', function() {
-                sidebar.classList.toggle('active');
-            });
+    function initFooter() {
+        console.log('🔧 Inicializando footer...');
+        // Atualizar ano automaticamente
+        const yearElement = document.getElementById('current-year');
+        if (yearElement) {
+            yearElement.textContent = new Date().getFullYear();
         }
     }
     
-    // HTML de fallback para cada componente
-    function getFallbackHTML(id, url) {
-        const fallbacks = {
-            'header-placeholder': `
-                <header class="site-header">
-                    <div class="header-content">
-                        <a href="/" class="logo">
-                            <i class="fas fa-star"></i>
-                            <span>TopOfertas.ReviewNexus</span>
-                        </a>
-                        <button id="mobile-menu-btn" class="mobile-menu-btn">
-                            <i class="fas fa-bars"></i>
-                        </button>
-                        <nav id="nav-menu" class="nav-menu">
-                            <a href="index.html" class="nav-link active">Início</a>
-                            <a href="eletrodomesticos.html" class="nav-link">Eletrodomésticos</a>
-                            <a href="sobre.html" class="nav-link">Sobre</a>
-                            <a href="#" class="nav-link">Contato</a>
-                        </nav>
-                    </div>
-                </header>
-            `,
-            'footer-placeholder': `
-                <footer class="site-footer">
-                    <div class="footer-content">
-                        <div class="footer-section">
-                            <h3>TopOfertas.ReviewNexus</h3>
-                            <p>Encontre as melhores ofertas com análises detalhadas.</p>
-                        </div>
-                        <div class="footer-section">
-                            <h4>Links Rápidos</h4>
-                            <a href="index.html">Início</a>
-                            <a href="eletrodomesticos.html">Eletrodomésticos</a>
-                            <a href="sobre.html">Sobre</a>
-                        </div>
-                        <div class="footer-section">
-                            <h4>Contato</h4>
-                            <p>contato@topofertas.reviewnexus.com</p>
-                        </div>
-                    </div>
-                    <div class="footer-bottom">
-                        <p>&copy; ${new Date().getFullYear()} TopOfertas.ReviewNexus. Todos os direitos reservados.</p>
-                        <p><small>Fallback - Arquivo original: ${url}</small></p>
-                    </div>
-                </footer>
-            `,
-            'sidebar-container': `
-                <aside id="sidebar" class="sidebar">
-                    <button id="sidebar-toggle" class="sidebar-toggle">
-                        <i class="fas fa-times"></i>
-                    </button>
-                    <div class="sidebar-content">
-                        <h3>Categorias</h3>
-                        <ul class="sidebar-menu">
-                            <li><a href="eletrodomesticos.html"><i class="fas fa-blender"></i> Eletrodomésticos</a></li>
-                            <li><a href="#"><i class="fas fa-laptop"></i> Tecnologia</a></li>
-                            <li><a href="#"><i class="fas fa-couch"></i> Móveis</a></li>
-                            <li><a href="#"><i class="fas fa-tshirt"></i> Moda</a></li>
-                        </ul>
-                        <div class="sidebar-footer">
-                            <p>Encontre as melhores ofertas!</p>
-                        </div>
-                    </div>
-                </aside>
-            `
-        };
+    function initSidebar() {
+        console.log('🔧 Inicializando sidebar...');
+        const toggleBtn = document.getElementById('sidebar-toggle');
+        const sidebar = document.getElementById('sidebar');
         
-        return fallbacks[id] || `<div class="component-error">Erro ao carregar componente: ${id}</div>`;
+        if (toggleBtn && sidebar) {
+            toggleBtn.addEventListener('click', function() {
+                sidebar.classList.toggle('active');
+            });
+        }
     }
 });
