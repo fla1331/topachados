@@ -33,7 +33,8 @@
     }
   }
   </script>
-
+  
+  <script src="https://topofertas.reviewnexus.blog/assets/js/script.js" defer></script>
   <script src="https://topofertas.reviewnexus.blog/assets/js/components.js"></script>
 
 </head>
@@ -141,57 +142,7 @@
 
   <div id="footer-placeholder"></div>
 
-
-  <!-- SCRIPT DO MENU HAMBÚRGUER FUNCIONAL -->
-  <script>
-    // MENU HAMBÚRGUER - AGORA FUNCIONANDO
-    const menuToggle = document.getElementById('menuToggle');
-    const mainNav = document.getElementById('mainNav');
-    const navOverlay = document.getElementById('navOverlay');
-    const body = document.body;
-
-    menuToggle.addEventListener('click', function(e) {
-      e.stopPropagation();
-      mainNav.classList.toggle('active');
-      navOverlay.classList.toggle('active');
-      
-      // Previne scroll quando menu aberto
-      if (mainNav.classList.contains('active')) {
-        body.style.overflow = 'hidden';
-      } else {
-        body.style.overflow = '';
-      }
-    });
-
-    // FECHA MENU AO CLICAR NO OVERLAY
-    navOverlay.addEventListener('click', function() {
-      mainNav.classList.remove('active');
-      navOverlay.classList.remove('active');
-      body.style.overflow = '';
-    });
-
-    // FECHA MENU AO CLICAR EM UM LINK (MOBILE)
-    const navLinks = document.querySelectorAll('.main-nav a');
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mainNav.classList.remove('active');
-        navOverlay.classList.remove('active');
-        body.style.overflow = '';
-      });
-    });
-
-    // FECHA MENU AO REDIMENSIONAR A TELA (se voltar para desktop)
-    window.addEventListener('resize', function() {
-      if (window.innerWidth > 600) {
-        mainNav.classList.remove('active');
-        navOverlay.classList.remove('active');
-        body.style.overflow = '';
-      }
-    });
-  </script>
-
  <div id="cookie-banner-placeholder"></div>
 
-  <script src="https://topofertas.reviewnexus.blog/assets/js/script.js" defer></script>
 </body>
 </html>
