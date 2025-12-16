@@ -1,25 +1,59 @@
-<!-- RODAPÉ -->
-  <footer>
-    <div class="container footer-container">
-      <div class="footer-logo">
-        <a href="https://topofertas.reviewnexus.blog/" class="logo">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff" stroke="#1a3a8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <path d="M16 10a4 4 0 0 1-8 0"></path>
-        </svg>
-        <h1 class="site-title">Top Ofertas</h1>
-      </a>
-        <p>Os melhores achadinhos online.</p>
-      </div>
-      <nav class="footer-nav">
-         <a href="https://topofertas.reviewnexus.blog/sobre-nos/">Sobre Nós</a>
-         <a href="https://topofertas.reviewnexus.blog/termos-de-uso/">Termos de Uso</a>
-         <a href="https://topofertas.reviewnexus.blog/politica-de-privacidade/">Política de Privacidade</a>
-         <a href="https://topofertas.reviewnexus.blog/contato/">Contato</a>
-      </nav>
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3><i class="fas fa-star"></i> TopOfertas.ReviewNexus</h3>
+            <p>Seu guia para as melhores ofertas online com análises imparciais.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Categorias</h4>
+            <a href="eletrodomesticos.html">Eletrodomésticos</a>
+            <a href="#">Tecnologia</a>
+            <a href="#">Móveis</a>
+            <a href="#">Moda</a>
+            <a href="#">Beleza</a>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Links Úteis</h4>
+            <a href="sobre.html">Sobre Nós</a>
+            <a href="#">Política de Privacidade</a>
+            <a href="#">Termos de Uso</a>
+            <a href="#">Contato</a>
+            <a href="#">FAQ</a>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Newsletter</h4>
+            <p>Receba as melhores ofertas em seu e-mail.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Seu e-mail" required>
+                <button type="submit">Inscrever</button>
+            </form>
+        </div>
     </div>
-    <div class="copyright">
-      <p>© 2025 Top Ofertas. Todos os direitos reservados.</p>
+    
+    <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> TopOfertas.ReviewNexus. Todos os direitos reservados.</p>
+        <p><small>Este site compara preços e oferece links de afiliados.</small></p>
     </div>
-  </footer>
+</footer>
+
+<script>
+    // Atualizar ano no footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    // Newsletter form
+    document.querySelector('.newsletter-form')?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = this.querySelector('input[type="email"]').value;
+        alert(`Obrigado por se inscrever com: ${email}`);
+        this.reset();
+    });
+</script>

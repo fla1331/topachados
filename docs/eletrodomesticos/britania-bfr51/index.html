@@ -34,7 +34,23 @@
   }
   </script>
 
-  <script src="https://topofertas.reviewnexus.blog/config.js" defer></script>
+
+  <!-- Configuração global -->
+    <script>
+      window.SITE_CONFIG = {
+        baseUrl: '',
+        environment: 'github-pages',
+        components: {
+          header: 'includes/header.html',
+          footer: 'includes/footer.html',
+          sidebar: 'includes/sidebar.html'
+        }
+      };
+    </script>
+
+  <script src="https://topofertas.reviewnexus.blog/assets/js/components.js"></script>
+
+
 </head>
 
 <body>
@@ -194,7 +210,6 @@
 
   <div id="footer-placeholder"></div>
 
-  <script src="https://topofertas.reviewnexus.blog/assets/js/load-components.js"></script>
 
   <!-- SCRIPT DO MENU HAMBÚRGUER FUNCIONAL -->
   <script>

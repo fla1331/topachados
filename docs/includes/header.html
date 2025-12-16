@@ -1,31 +1,51 @@
-<!-- CABEÇALHO -->
-  <header>
-    <div class="container header-container">
-      <!-- LOGO -->
-      <div class="logo-container">
-      <a href="https://topofertas.reviewnexus.blog/" class="logo">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff" stroke="#1a3a8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <path d="M16 10a4 4 0 0 1-8 0"></path>
-        </svg>
-        <h1 class="site-title">Top Ofertas</h1>
-      </a>
+<header class="site-header">
+    <div class="header-content">
+        <a href="index.html" class="logo">
+            <i class="fas fa-star"></i>
+            <span>TopOfertas.ReviewNexus</span>
+        </a>
+        
+        <button id="mobile-menu-btn" class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <nav id="nav-menu" class="nav-menu">
+            <a href="index.html" class="nav-link">
+                <i class="fas fa-home"></i> Início
+            </a>
+            <a href="eletrodomesticos.html" class="nav-link">
+                <i class="fas fa-blender"></i> Eletrodomésticos
+            </a>
+            <a href="#" class="nav-link">
+                <i class="fas fa-laptop"></i> Tecnologia
+            </a>
+            <a href="#" class="nav-link">
+                <i class="fas fa-couch"></i> Móveis
+            </a>
+            <a href="sobre.html" class="nav-link">
+                <i class="fas fa-info-circle"></i> Sobre
+            </a>
+            <a href="#" class="nav-link search-toggle">
+                <i class="fas fa-search"></i> Buscar
+            </a>
+        </nav>
+        
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar produtos...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
     </div>
+</header>
 
-      <!-- BOTÃO HAMBÚRGUER (SÓ VISÍVEL NO MOBILE) -->
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu de navegação">
-        <i class="fas fa-bars"></i>
-        <i class="fas fa-times"></i>
-      </button>
-
-      <!-- MENU DE NAVEGAÇÃO -->
-      <nav class="main-nav" id="mainNav">
-        <ul>
-          <li><a href="https://topofertas.reviewnexus.blog/">Início</a></li>
-          <li><a href="https://topofertas.reviewnexus.blog/sobre-nos">Sobre Nós</a></li>  
-          <li><a href="https://topofertas.reviewnexus.blog/contato">Contato</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<script>
+    // Script específico do header
+    console.log('Header script executado');
+    
+    // Busca toggle
+    document.querySelectorAll('.search-toggle').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('.search-bar').classList.toggle('active');
+        });
+    });
+</script>
