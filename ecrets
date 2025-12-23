@@ -1,0 +1,86 @@
+[33mcommit 2b39383067d0d42a82a89bf8730fece4620e4aa6[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: flanegociosonline-cell <flanegociosonline@gmail.com>
+Date:   Tue Dec 23 02:48:09 2025 -0300
+
+    refresh
+
+.env
+README.md
+backups/produtos_backup_20251218_215659.csv
+backups/produtos_backup_20251218_221027.csv
+backups/produtos_backup_20251218_221119.csv
+backups/produtos_backup_20251218_221410.csv
+backups/produtos_backup_20251218_221801.csv
+backups/produtos_backup_20251218_222758.csv
+backups/produtos_backup_20251220_060543.csv
+backups/produtos_backup_20251220_073005.csv
+backups/produtos_backup_20251220_074129.csv
+backups/produtos_backup_20251220_075809.csv
+backups/produtos_backup_20251220_080852.csv
+backups/produtos_backup_20251220_094805.csv
+backups/produtos_backup_20251220_103426.csv
+backups/produtos_backup_20251220_110813.csv
+backups/produtos_backup_20251220_122531.csv
+backups/produtos_backup_20251220_132115.csv
+backups/produtos_backup_20251220_132618.csv
+backups/produtos_backup_20251220_134104.csv
+backups/produtos_backup_20251220_134113.csv
+backups/produtos_backup_20251220_134144.csv
+backups/produtos_backup_20251220_134256.csv
+backups/produtos_backup_20251220_134653.csv
+backups/produtos_backup_20251220_154739.csv
+backups/produtos_backup_20251220_154935.csv
+backups/produtos_backup_20251220_172528.csv
+backups/produtos_backup_20251220_212610.csv
+backups/produtos_backup_20251220_220014.csv
+backups/produtos_backup_20251220_231824.csv
+backups/produtos_backup_20251221_005851.csv
+backups/produtos_backup_20251221_082634.csv
+backups/produtos_backup_20251221_091214.csv
+backups/produtos_backup_20251221_125729.csv
+backups/produtos_backup_20251221_170156.csv
+backups/produtos_backup_20251221_184729.csv
+backups/produtos_backup_20251221_184844.csv
+backups/produtos_backup_20251221_190742.csv
+backups/produtos_backup_20251221_190823.csv
+backups/produtos_backup_20251221_202215.csv
+backups/produtos_backup_20251221_214807.csv
+backups/produtos_backup_20251221_235036.csv
+backups/produtos_backup_20251222_081911.csv
+config.json
+config_ia.json
+docs/assets/css/style.css
+docs/computadores/index.html
+docs/computadores/notebook-dell-inspiron-15/index.html
+docs/contato.html
+docs/eletrodomesticos/britania-bfr51/index.html
+docs/eletrodomesticos/britania-bfr51/indexbk.html
+docs/includes/cookie-banner.html
+docs/includes/footer.html
+docs/includes/sidebar.html
+docs/index copy.html
+docs/index.html
+docs/politica-privacidade.html
+docs/sitemap.xml
+docs/sobre-nos.html
+docs/termos-de-uso.html
+docs/teste.html
+docs/ton-maquininhas-modelos/index.html
+finalizador_html.py
+gerador.py
+gerador_real copy.py
+gerador_satelites.py
+logs/gerador_20251221.log
+produtos copy.csv
+produtos.csv
+prompt_final_html.txt
+requirements.txt
+reviews_finalizados.json
+templates/analise.txt
+templates/comparativo.txt
+templates/guia.txt
+templates/preland.txt
+templates/review.txt
+teste_api.py
+teste_openrouter.py
+tutorial.txt

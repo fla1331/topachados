@@ -4,6 +4,7 @@ config.json
 *.env
 
 backups/
+*.csv
 logs/
 
 teste_api.py
