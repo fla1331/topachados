@@ -1,0 +1,33 @@
+# TEMPLATE PARA COMPARATIVO - {PRODUTO}
+
+## OBJETIVO:
+Comparar {PRODUTO} com seus principais concorrentes para ajudar na decisão de compra.
+
+## ESTRUTURA:
+1. INTRODUÇÃO sobre a categoria {CATEGORIA}
+2. TABELA COMPARATIVA completa (especificações, preços, recursos)
+3. ANÁLISE INDIVIDUAL de cada produto
+4. COMPARAÇÃO DETALHADA ponto a ponto
+5. VENCEDOR POR CATEGORIA (melhor custo-benefício, melhor performance, etc.)
+6. RECOMENDAÇÃO FINAL baseada em diferentes perfis de usuário
+
+## PRODUTOS A COMPARAR:
+1. {PRODUTO} (principal)
+2. Concorrente A (principal concorrente)
+3. Concorrente B (alternativa popular)
+
+## TABELA COMPARATIVA OBRIGATÓRIA:
+| Característica | {PRODUTO} | Concorrente A | Concorrente B |
+|----------------|-----------|---------------|---------------|
+| Preço | [Preço] | [Preço] | [Preço] |
+| [Característica 1] | [Info] | [Info] | [Info] |
+| [Característica 2] | [Info] | [Info] | [Info] |
+| [Característica 3] | [Info] | [Info] | [Info] |
+| Garantia | [Info] | [Info] | [Info] |
+
+## CONCLUSÃO:
+- Para quem vale mais o {PRODUTO}
+- Para quem recomendar os concorrentes
+- Qual oferece melhor custo-benefício
+
+Retorne HTML completo com tabela comparativa.

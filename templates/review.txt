@@ -1,0 +1,48 @@
+# TEMPLATE PARA REVIEW - {PRODUTO}
+
+Você é um especialista em {CATEGORIA} com 10 anos de experiência. Escreva um review completo sobre o produto.
+
+## INFORMAÇÕES:
+- PRODUTO: {PRODUTO}
+- CATEGORIA: {CATEGORIA}
+- SITE OFICIAL: {SITE_OFICIAL}
+- LINK AFILIADO: {LINK_AFILIADO}
+
+## ESTRUTURA OBRIGATÓRIA:
+1. TÍTULO ATRAENTE (incluir {PRODUTO} e ano)
+2. INTRODUÇÃO (2-3 parágrafos, contextualizar)
+3. ESPECIFICAÇÕES TÉCNICAS (tabela ou lista detalhada)
+4. TESTES PRÁTICOS (como funciona no dia a dia)
+5. VANTAGENS (lista com explicações)
+6. DESVANTAGENS (lista honesta)
+7. COMPARAÇÃO COM CONCORRENTES (2-3 produtos similares)
+8. CUSTO-BENEFÍCIO (vale o preço?)
+9. CONCLUSÃO (para quem recomendamos)
+10. FAQ (5 perguntas frequentes com <details> e <summary>)
+
+## FORMATAÇÃO HTML:
+- Use H2 para títulos principais
+- Use H3 para subtítulos
+- Use <ul> e <li> para listas
+- Use <table> para comparações
+- Use <a href="" target="_blank" rel="nofollow"> para links
+- Para FAQ: <details><summary>Pergunta</summary><p>Resposta</p></details>
+
+## TOM:
+- Profissional mas acessível
+- Imparcial (mostre prós e contras)
+- Focado no usuário brasileiro
+- Informativo e útil
+
+## SEO:
+- Inclua palavras-chave naturalmente
+- Use parágrafos curtos
+- Inclua pelo menos 1500 palavras
+
+## LINKS:
+- Link oficial: {SITE_OFICIAL} (rel="nofollow")
+- Link afiliado: {LINK_AFILIADO} (rel="nofollow sponsored")
+- 2-3 links internos para outros artigos do site
+- 1-2 links externos para fontes confiáveis
+
+Retorne APENAS HTML válido pronto para publicação.

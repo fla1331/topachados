@@ -1,0 +1,270 @@
+================================================================
+🎯 RESUMO RÁPIDO DO QUE O CÓDIGO FAZ
+================================================================
+
+1. Lê produtos de um arquivo CSV (como Excel)
+2. Para cada produto, cria 2 páginas HTML:
+   - Review técnico (análise detalhada)
+   - Pre-landing (foco em problema → solução)
+3. Tudo otimizado para Google (SEO)
+4. Sidebar automática com produtos relacionados
+5. Site em vários idiomas
+
+================================================================
+📍 MAPA DO CÓDIGO - ONDE ESTÁ CADA COISA
+================================================================
+
+LINHAS 1-100: → CONFIGURAÇÃO INICIAL
+├── Aqui você muda URL e nome do site
+└── Linha 27: site_url = "https://topofertas.reviewnexus.blog"
+
+LINHAS 100-300: → FUNÇÕES BÁSICAS
+├── Cria URLs amigáveis
+└── Gera títulos para SEO
+
+LINHAS 300-600: → SEO E METATAGS
+└── Não precisa mexer aqui
+
+LINHAS 600-700: → SISTEMA DE IMAGENS
+└── Aqui você muda fotos das categorias
+
+LINHAS 700-1300: → SISTEMA DE IA (🤖 IMPORTANTE!)
+├── Configura API de IA
+├── Gera conteúdo automático
+└── Linha 764: API Key do Open Router (já vem)
+
+LINHAS 1300-2000: → TEMPLATES (.txt files)
+├── review.txt, guia.txt, preland.txt
+└── MOLDE dos artigos
+
+LINHAS 2000-2500: → CRIAÇÃO DOS ARTIGOS HTML
+├── Onde o HTML final é montado
+└── Sidebar, headers, footers
+
+LINHAS 2500-3000: → SITEMAP E BACKUP
+└── Funciona automático
+
+LINHAS 3000-3500: → MENU PRINCIPAL
+└── O menu que você vê ao rodar o programa
+
+================================================================
+🎨 MUDANÇAS MAIS COMUNES - PASSO A PASSO
+================================================================
+
+### 1️⃣ MUDAR NOME E URL DO SITE
+
+📍 LINHA 27:
+site_url = "https://topofertas.reviewnexus.blog"
+→ MUDE PARA: site_url = "https://seusite.com"
+
+📍 LINHA 430 (dentro do config):
+"name": "Top Ofertas"
+→ MUDE PARA: "name": "Seu Nome Aqui"
+
+📍 LINHA 431:
+"author": "Equipe Top Ofertas"
+→ MUDE PARA: "author": "Sua Equipe"
+
+### 2️⃣ ADICIONAR NOVA CATEGORIA
+
+📍 LINHA 582-609: Sistema de imagens
+Adicione sua categoria assim:
+
+EXEMPLO: Se quiser categoria "fitness"
+
+'fitness': [
+'https://images.unsplash.com/foto-fitness1',
+'https://images.unsplash.com/foto-fitness2'
+]
+
+
+### 3️⃣ MUDAR AS CORES DO SITE
+
+📍 LINHA 3100-3300: CSS do site
+Procure e mude estas cores:
+
+#1a3a8f → Azul principal
+#2c3e50 → Azul escuro  
+#ff6b6b → Vermelho (botões)
+#3498db → Azul claro
+#4CAF50 → Verde
+
+### 4️⃣ EDITAR MENU DE NAVEGAÇÃO
+
+📍 LINHA 2650: Header português
+
+
+
+### 3️⃣ MUDAR AS CORES DO SITE
+
+📍 LINHA 3100-3300: CSS do site
+Procure e mude estas cores:
+
+#1a3a8f → Azul principal
+#2c3e50 → Azul escuro  
+#ff6b6b → Vermelho (botões)
+#3498db → Azul claro
+#4CAF50 → Verde
+
+### 4️⃣ EDITAR MENU DE NAVEGAÇÃO
+
+📍 LINHA 2650: Header português
+
+<a href="../games/index.html">Games</a>
+<a href="../smartphones/index.html">Smartphones</a>
+
+
+
+→ Mude para suas categorias
+
+📍 LINHA 2660: Header inglês (mesma coisa)
+
+### 5️⃣ CONFIGURAR IA (Open Router)
+
+📍 LINHA 764: API Key já configurada
+NÃO PRECISA MUDAR NADA - já vem funcionando
+
+Se quiser usar outra IA:
+📍 LINHA 700: método configurar_ia()
+Siga as instruções na tela
+
+================================================================
+📝 COMO FUNCIONAM OS TEMPLATES (.txt)
+================================================================
+
+PASTA: templates/
+TEM 5 ARQUIVOS:
+
+1. review.txt → Molde para REVIEWS
+   Contém estrutura: Introdução → Especificações → Conclusão
+
+2. guia.txt → Molde para GUIAS  
+   Contém: O que é → Como escolher → Dicas
+
+3. preland.txt → Molde para PRE-LANDING
+   Contém: Problema → Solução → Benefícios → Oferta
+
+4. comparativo.txt → Para comparações
+5. analise.txt → Para análises técnicas
+
+COMO EDITAR OS TEMPLATES:
+1. Abra o arquivo .txt
+2. Mude o texto mantendo os {NOMES} entre chaves
+3. Salve
+
+EXEMPLO NO review.txt:
+
+PRODUTO: {PRODUTO} ← NÃO MUDE ISSO
+CATEGORIA: {CATEGORIA} ← NÃO MUDE ISSO
+IDIOMA: {IDIOMA} ← NÃO MUDE ISSO
+
+
+
+O sistema substitui automaticamente:
+{PRODUTO} → "Resveratrol Premium"
+{CATEGORIA} → "suplementos"
+{IDIOMA} → "português"
+
+================================================================
+📊 ARQUIVO produtos.csv - COMO USAR
+================================================================
+
+Crie um arquivo chamado produtos.csv (Excel/Bloco de Notas)
+
+FORMATO:
+produto,idioma,categoria,tipo_artigo,site_oficial,links_afiliados,status
+Resveratrol,pt-BR,suplementos,review,https://site.com/,https://afiliado.com/,pending
+Resveratrol,pt-BR,suplementos,preland,https://site.com/,https://afiliado.com/,pending
+Meditação,en-US,mente,guia,https://site.com/,https://afiliado.com/,pending
+
+EXPLICAÇÃO SIMPLES:
+- produto: Nome do produto
+- idioma: pt-BR (português), en-US (inglês)
+- categoria: suplementos, fitness, mente (crie as suas)
+- tipo_artigo: review (análise) ou preland (problema→solução)
+- site_oficial: URL do fabricante
+- links_afiliados: SEU link de afiliado
+- status: pending (não feito) → completed (feito automático)
+
+================================================================
+🔄 SISTEMA DE FUNNEL (2 ARTIGOS POR PRODUTO)
+================================================================
+
+QUANDO tipo_artigo = "preland", cria:
+
+📝 ARTIGO 1: REVIEW TÉCNICO
+URL: suplementos/resveratrol/
+CONTÉUDO: Análise técnica, estudos, especificações
+
+🎯 ARTIGO 2: PRE-LANDING (GUIÁ)
+URL: suplementos/resveratrol-guia-completo/
+CONTÉUDO: Foca em PROBLEMA → SOLUÇÃO
+EXEMPLO:
+- PROBLEMA: "Envelhecimento precoce, falta de energia"
+- SOLUÇÃO: "Resveratrol pode ajudar"
+- NÃO É sobre o produto, é sobre a DOR do cliente
+
+================================================================
+🎭 EXEMPLO PARA SAÚDE E LONGEVIDADE
+================================================================
+
+SEU CSV FICA ASSIM:
+Resveratrol,pt-BR,suplementos,preland,site.com,afiliado.com,pending
+Ômega 3,pt-BR,suplementos,preland,site.com,afiliado.com,pending
+Meditação,pt-BR,mente,guia,site.com,afiliado.com,pending
+
+O SISTEMA GERA:
+1. saude/resveratrol/ → Análise técnica do Resveratrol
+2. saude/resveratrol-guia-completo/ → "Viva mais e melhor"
+3. saude/omega-3/ → Análise do Ômega 3
+4. saude/omega-3-guia-completo/ → "Coração saudável"
+5. mente/meditacao/ → Guia completo de meditação
+
+================================================================
+🔧 COMO RODAR O SISTEMA
+================================================================
+
+1. Tenha Python instalado (python.org)
+2. Salve o código como gerador_real.py
+3. Execute: python gerador_real.py
+4. No menu, escolha opção 5: "PROCESSAR TABELA COMPLETA"
+
+O SISTEMA VAI:
+1. Ler o produtos.csv
+2. Para cada produto, criar os artigos
+3. Gerar sitemap automático
+4. Criar pastas organizadas
+
+================================================================
+⚠️ DICAS IMPORTANTES
+================================================================
+
+✅ NÃO APAGAR: {PRODUTO}, {CATEGORIA}, {IDIOMA} nos templates
+✅ CRIE CATEGORIAS NOVAS: Adicione no sistema de imagens
+✅ MANTENHA O FORMATO do CSV
+✅ TESTE COM 1 PRODUTO primeiro
+✅ USE o Open Router (já vem configurado)
+
+================================================================
+📞 RESUMO DAS ALTERAÇÕES MAIS IMPORTANTES
+================================================================
+
+O QUE MUDAR                              ONDE ESTÁ
+─────────────────────────────────────────────────────────────
+Nome do site                           Linha 27, 430
+URL do site                           Linha 27
+Categorias                            Linha 582-609
+Cores do site                         Linha 3100-3300  
+Menu de navegação                     Linha 2650-2670
+Templates dos artigos                 Pasta templates/
+Lista de produtos                     Arquivo produtos.csv
+
+================================================================
+🎯 LEMBRETE FINAL
+================================================================
+
+1. O sistema já vem funcionando
+2. Open Router já configurado
+3. Só precisa mudar nome, cores e categorias
+4. Teste sempre com 1 produto antes
+5. Divirta-se criando conteúdo automático! 🎉

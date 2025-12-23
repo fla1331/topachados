@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato - Top Ofertas | Fale Conosco</title>
-    <meta name="description" content="Entre em contato com a equipe do Top Ofertas. Dúvidas, sugestões ou parcerias, estamos aqui para ajudar!">
-    <meta name="keywords" content="contato Top Ofertas, fale conosco, sugestões de produtos, dúvidas sobre reviews">
+    <title>Sobre Nós - Top Ofertas | Quem Somos</title>
+    <meta name="description" content="Conheça a equipe do Top Ofertas, nossa missão e como ajudamos você a encontrar as melhores ofertas online.">
+    <meta name="keywords" content="sobre Top Ofertas, quem somos, missão, equipe, reviews honestos">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- CSS -->
     <link rel="stylesheet" href="https://topofertas.reviewnexus.blog/assets/css/style.css">
     
-    <link rel="canonical" href="https://topofertas.reviewnexus.blog/contato/">
+    <link rel="canonical" href="https://topofertas.reviewnexus.blog/sobre-nos/">
     
     <style>
         :root {
@@ -26,76 +26,78 @@
             --border-color: #e1e5eb;
         }
         
-        .contact-hero {
+        .about-hero {
             text-align: center;
             padding: 40px 20px;
             margin: 20px 0 40px;
         }
         
-        .contact-hero h1 {
+        .about-hero h1 {
             color: var(--primary-color);
             margin-bottom: 15px;
         }
         
-        .contact-hero p {
+        .about-hero p {
             font-size: 1.2rem;
             color: var(--text-light);
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
         }
         
-        .contact-simple {
-            max-width: 800px;
+        .about-content {
+            max-width: 900px;
             margin: 0 auto;
-            padding: 40px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         
-        .contact-email {
-            text-align: center;
+        .mission-values {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
             margin: 40px 0;
-            padding: 30px;
-            background: linear-gradient(135deg, rgba(26, 58, 143, 0.05), rgba(255, 107, 0, 0.05));
-            border-radius: 10px;
-            border-left: 4px solid var(--accent-color);
         }
         
-        .contact-email i {
-            font-size: 3rem;
+        .mission-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--accent-color);
+        }
+        
+        .mission-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .mission-card i {
+            font-size: 2.5rem;
             color: var(--accent-color);
             margin-bottom: 20px;
         }
         
-        .email-address {
-            font-size: 1.5rem;
+        .about-section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .about-section h2 {
             color: var(--primary-color);
-            font-weight: 600;
-            margin: 20px 0;
-            word-break: break-all;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(26, 58, 143, 0.1);
         }
         
-        .contact-note {
-            background: var(--light-bg);
-            padding: 20px;
+        .team-highlight {
+            background: linear-gradient(135deg, rgba(26, 58, 143, 0.05), rgba(255, 107, 0, 0.05));
+            padding: 30px;
             border-radius: 10px;
-            margin-top: 30px;
-            border-left: 3px solid var(--secondary-color);
-        }
-        
-        .contact-note h3 {
-            color: var(--secondary-color);
-            margin-top: 0;
-        }
-        
-        .response-time {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
-            color: var(--text-light);
+            margin: 30px 0;
+            text-align: center;
+            border-left: 4px solid var(--primary-color);
         }
         
         /* Sidebar styling */
@@ -190,12 +192,12 @@
         }
         
         @media (max-width: 768px) {
-            .contact-simple {
+            .about-section {
                 padding: 25px;
             }
             
-            .email-address {
-                font-size: 1.2rem;
+            .mission-card {
+                padding: 25px;
             }
         }
     </style>
@@ -236,39 +238,70 @@
     <!-- CONTEÚDO PRINCIPAL -->
     <main class="container main-container">
         <article class="content">
-            <div class="contact-hero">
-                <h1>Fale Conosco</h1>
-                <p>Tem alguma dúvida, sugestão ou quer conversar? Entre em contato através do nosso email.</p>
+            <div class="about-hero">
+                <h1>Sobre Nós</h1>
+                <p>Conheça quem está por trás do Top Ofertas e nossa missão de ajudar você a encontrar as melhores compras online.</p>
             </div>
 
-            <div class="contact-simple">
-                <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 30px;">
-                    <i class="fas fa-envelope"></i> Entre em Contato
-                </h2>
-                
-                <p>Nossa equipe está pronta para te ajudar com qualquer dúvida sobre os produtos, sugestões para novos reviews ou qualquer outra questão relacionada ao site.</p>
-                
-                <div class="contact-email">
-                    <i class="fas fa-envelope-open-text"></i>
-                    <h3>Email Principal</h3>
-                    <p>Para assuntos gerais, sugestões e dúvidas:</p>
-                    <div class="email-address">fls_ctba@hotmail.com</div>
-                   
+            <div class="about-content">
+                <div class="about-section">
+                    <h2>Quem Somos</h2>
+                    <p>O <strong>Top Ofertas</strong> nasceu da ideia simples de ajudar pessoas a encontrarem produtos de qualidade com os melhores preços. Somos uma pequena equipe apaixonada por tecnologia, consumo consciente e, claro, por uma boa oferta!</p>
+                    
+                    <p>Nossa jornada começou com a percepção de que cada vez mais pessoas buscam informações confiáveis antes de fazer uma compra, especialmente quando se trata de produtos eletrônicos e tecnológicos.</p>
+                    
+                    <div class="team-highlight">
+                        <h3><i class="fas fa-users"></i> Nossa Equipe</h3>
+                        <p>Somos um pequeno grupo de entusiastas de tecnologia que testa, analisa e compara produtos para trazer reviews honestos e imparciais. Acreditamos que todo consumidor merece informações transparentes antes de investir seu dinheiro.</p>
+                    </div>
                 </div>
                 
-                <div class="contact-note">
-                    <h3><i class="fas fa-clock"></i> Informações Importantes</h3>
-                    <p><strong>Horário de resposta:</strong> Tentamos responder todos os emails em até 48 horas úteis.</p>
-                    <p><strong>Assuntos que podemos ajudar:</strong></p>
+                <div class="about-section">
+                    <h2>Nossa Missão</h2>
+                    <p>Nosso objetivo é claro: <strong>ajudar você a tomar melhores decisões de compra</strong>. Queremos que cada visita ao nosso site signifique economia, qualidade e satisfação.</p>
+                    
+                    <div class="mission-values">
+                        <div class="mission-card">
+                            <i class="fas fa-search"></i>
+                            <h3>Transparência</h3>
+                            <p>Fornecemos informações claras e honestas sobre cada produto, incluindo prós, contras e alternativas.</p>
+                        </div>
+                        
+                        <div class="mission-card">
+                            <i class="fas fa-handshake"></i>
+                            <h3>Confiança</h3>
+                            <p>Nossas análises são baseadas em pesquisa e, quando possível, testes práticos dos produtos.</p>
+                        </div>
+                        
+                        <div class="mission-card">
+                            <i class="fas fa-percentage"></i>
+                            <h3>Economia</h3>
+                            <p>Buscamos as melhores ofertas e compartilhamos cupons de desconto para você economizar.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-section">
+                    <h2>Como Trabalhamos</h2>
+                    <p>Nossa metodologia é baseada em:</p>
                     <ul>
-                        <li>Sugestões de produtos para review</li>
-                        <li>Dúvidas sobre as análises publicadas</li>
-                        <li>Problemas com links de ofertas</li>
-                        <li>Sugestões para melhorar o site</li>
+                        <li><strong>Pesquisa detalhada:</strong> Analisamos especificações técnicas, reviews de usuários e preços no mercado.</li>
+                        <li><strong>Comparação justa:</strong> Colocamos produtos similares lado a lado para você escolher o melhor para suas necessidades.</li>
+                        <li><strong>Atualização constante:</strong> Mantemos nossas análises atualizadas com novas informações e ofertas.</li>
+                        <li><strong>Transparência total:</strong> Sempre informamos quando utilizamos links afiliados (você não paga nada a mais por isso).</li>
                     </ul>
                 </div>
                 
-                
+                <div class="about-section">
+                    <h2>Compromisso com Você</h2>
+                    <p>Entendemos que cada compra é importante. Por isso, nos comprometemos a:</p>
+                    <ul>
+                        <li>Manter reviews honestos e imparciais</li>
+                        <li>Atualizar preços e ofertas regularmente</li>
+                        <li>Responder dúvidas e sugestões em até 48 horas</li>
+                        <li>Corrigir rapidamente qualquer informação desatualizada</li>
+                    </ul>
+                </div>
             </div>
         </article>
 
@@ -294,8 +327,8 @@
             </div>
             
             <div class="widget">
-                <h3><i class="fas fa-lightbulb"></i> Dica Rápida</h3>
-                <p>Antes de enviar seu email, verifique se sua dúvida já foi respondida em algum de nossos reviews.</p>
+                <h3><i class="fas fa-lightbulb"></i> Dica Importante</h3>
+                <p>Sempre verifique a data da análise e os preços antes de comprar. Ofertas podem expirar rapidamente!</p>
             </div>
         </aside>
     </main>

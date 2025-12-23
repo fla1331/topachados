@@ -1,0 +1,25 @@
+{
+  "site": {
+    "name": "Top Ofertas",
+    "url": "https://topofertas.reviewnexus.blog",
+    "description": "Reviews honestos de produtos de tecnologia",
+    "language": "pt-BR",
+    "author": "Equipe TechReviews",
+    "twitter": "@TopOfertas",
+    "fb_app_id": "",
+    "google_analytics": "",
+    "default_image": "/assets/img/og-default.jpg"
+  },
+  "seo": {
+    "default_priority": 0.8,
+    "change_freq": "weekly",
+    "enable_amp": false,
+    "enable_jsonld": true
+  },
+  "content": {
+    "word_count": 1800,
+    "enable_faq": true,
+    "enable_toc": true,
+    "image_source": "placeholder"
+  }
+}

@@ -1,0 +1,35 @@
+# TEMPLATE PARA ANÁLISE TÉCNICA - {PRODUTO}
+
+## PÚBLICO-ALVO:
+Usuários avançados, entusiastas e profissionais que precisam de detalhes técnicos.
+
+## ESTRUTURA TÉCNICA:
+1. ARQUITETURA E COMPONENTES (diagrama conceitual em texto)
+2. ESPECIFICAÇÕES DETALHADAS (todos os componentes e suas specs)
+3. RESULTADOS DE BENCHMARKS (dados quantitativos de performance)
+4. ANÁLISE DE EFICIÊNCIA (consumo, calor, ruído)
+5. POTENCIAL DE OVERCLOCK/UPGRADE
+6. COMPARAÇÃO TÉCNICA com especificações de referência
+7. CONCLUSÃO TÉCNICA (para que tipo de uso é ideal)
+
+## DADOS TÉCNICOS OBRIGATÓRIOS:
+- Processador/CPU: especificações completas
+- Memória: tipo, velocidade, latência
+- Armazenamento: tipo, velocidade, capacidade
+- Conectividade: todas as portas e protocolos
+- Alimentação: consumo, eficiência
+- Resfriamento: sistema, temperaturas em carga
+
+## TESTES A RELATAR:
+- Performance em diferentes cenários de uso
+- Estabilidade sob carga prolongada
+- Compatibilidade com periféricos
+- Temperaturas em ambientes controlados
+
+## LINGUAGEM:
+- Técnica mas compreensível
+- Dados precisos e verificáveis
+- Referências a padrões da indústria
+- Comparações com benchmarks conhecidos
+
+Retorne uma análise técnica profunda em HTML com dados específicos.

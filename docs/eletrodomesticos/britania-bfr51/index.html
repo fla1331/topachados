@@ -43,7 +43,37 @@
   <!-- OVERLAY PARA FECHAR MENU (MOBILE) -->
   <div class="nav-overlay" id="navOverlay"></div>
 
-  <div id="header-placeholder"></div>
+ <!-- CABEÇALHO -->
+  <header>
+    <div class="container header-container">
+      <!-- LOGO -->
+      <div class="logo-container">
+      <a href="https://topofertas.reviewnexus.blog/" class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff" stroke="#1a3a8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+        <h1 class="site-title">Top Ofertas</h1>
+      </a>
+    </div>
+
+      <!-- BOTÃO HAMBÚRGUER (SÓ VISÍVEL NO MOBILE) -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu de navegação">
+        <i class="fas fa-bars"></i>
+        <i class="fas fa-times"></i>
+      </button>
+
+      <!-- MENU DE NAVEGAÇÃO -->
+      <nav class="main-nav" id="mainNav">
+        <ul>
+          <li><a href="https://topofertas.reviewnexus.blog/">Início</a></li>
+          <li><a href="https://topofertas.reviewnexus.blog/sobre-nos">Sobre Nós</a></li>  
+          <li><a href="https://topofertas.reviewnexus.blog/contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <!-- CONTEÚDO PRINCIPAL -->
   <main class="container main-container">
@@ -136,11 +166,83 @@
       </section>
     </article>
 
-    <div id="sidebar-placeholder"></div>
+    <aside class="sidebar">
+      <!-- WIDGET OFERTA DO DIA -->
+      <div class="widget offer-widget">
+        <div class="offer-tag">OFERTA RELÂMPAGO</div>
+        <h3>Britânia BFR51 com 15% OFF!</h3>
+        <p><strong>Promoção válida por tempo limitado</strong></p>
+        <p>Frete grátis para todo Brasil + 12 meses de garantia</p>
+        <a href="https://go.reviewnexus.blog/cozinha/britania-air-fryer" class="btn-cta" style="display: block; margin-top: 15px;" target="_blank" rel="nofollow">Aproveitar Agora</a>
+      </div>
+
+      <!-- WIDGET PRODUTOS RELACIONADOS -->
+      <div class="widget">
+        <h3 class="widget-title"><i class="fas fa-link"></i> Comparar com</h3>
+        <div class="related-product">
+          <a href="https://mercadolivre.com/sec/1XKNu1E"><img src="https://topofertas.reviewnexus.blog/assets/img/eletrodomesticos/mondial-airfrayer.webp" alt="Air Fryer Mondial"></a>
+          <div>
+            <a href="https://mercadolivre.com/sec/1XKNu1E" target="_blank" rel="nofollow"><strong>Mondial AFN-40</strong></a><br>
+            <small>Capacidade 4.2L • 1400W</small>
+          </div>
+        </div>
+        <div class="related-product">
+          <a href="https://mercadolivre.com/sec/1RrHTLw"><img src="https://topofertas.reviewnexus.blog/assets/img/eletrodomesticos/Airfryer_Philips_Walita_Ai551.webp" alt="Air Fryer Philips"></a>
+          <div>
+           <a href="https://mercadolivre.com/sec/1RrHTLw" target="_blank" rel="nofollow"> <strong>Philips Walita</strong></a><br>
+            <small>Capacidade 12L • Potência de 1.600 W</small>
+          </div>
+        </div>
+        <div class="related-product">
+          <a href="https://mercadolivre.com/sec/1xkNzTr" target="_blank" rel="nofollow"><img src="https://topofertas.reviewnexus.blog/assets/img/eletrodomesticos/Forno E Fryer Multifunções Oster.webp" alt="Air Fryer Oster"></a>
+          <div>
+            <a href="https://mercadolivre.com/sec/1xkNzTr" target="_blank" rel="nofollow"><strong>Forno E Fryer Multifunções Oster Ofor160</strong></a><br>
+            <small>Capacidade 15L • Digital</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- WIDGET LINKS IMPORTANTES -->
+      <div class="widget">
+        <h3 class="widget-title"><i class="fas fa-file-contract"></i> Links do Site</h3>
+        <ul style="list-style: none; padding-left: 5px;">
+                    <li><i class="fas fa-chevron-right" style="color: var(--accent-color);"></i> <a href="https://topofertas.reviewnexus.blog/sobre-nos/">Sobre Nós</a></li>
+                    <li><i class="fas fa-chevron-right" style="color: var(--accent-color);"></i> <a href="https://topofertas.reviewnexus.blog/politica-de-privacidade/">Política de Privacidade</a></li>
+          <li><i class="fas fa-chevron-right" style="color: var(--accent-color);"></i> <a href="https://topofertas.reviewnexus.blog/termos-de-uso/">Termos de Uso/a&gt;</a></li><a href="https://topofertas.reviewnexus.blog/termos-de-uso/">
+          </a><li><a href="https://topofertas.reviewnexus.blog/termos-de-uso/"><i class="fas fa-chevron-right" style="color: var(--accent-color);"></i> </a><a href="https://topofertas.reviewnexus.blog/contato/">Contato</a></li>
+
+        </ul>
+      </div>
+
+      
+    </aside>
   
   </main>
 
-  <div id="footer-placeholder"></div>
+    <footer>
+    <div class="container footer-container">
+      <div class="footer-logo">
+        <a href="https://topofertas.reviewnexus.blog/" class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff" stroke="#1a3a8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+        <h1 class="site-title">Top Ofertas</h1>
+      </a>
+        <p>Os melhores achadinhos online.</p>
+      </div>
+      <nav class="footer-nav">
+         <a href="https://topofertas.reviewnexus.blog/sobre-nos/">Sobre Nós</a>
+         <a href="https://topofertas.reviewnexus.blog/termos-de-uso/">Termos de Uso</a>
+         <a href="https://topofertas.reviewnexus.blog/politica-de-privacidade/">Política de Privacidade</a>
+         <a href="https://topofertas.reviewnexus.blog/contato/">Contato</a>
+      </nav>
+    </div>
+    <div class="copyright">
+      <p>© 2025 Top Ofertas. Todos os direitos reservados.</p>
+    </div>
+  </footer>
 
  <div id="cookie-banner-placeholder"></div>
 

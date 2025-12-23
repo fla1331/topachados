@@ -1,0 +1,33 @@
+# TEMPLATE PARA GUIA - Como escolher {PRODUTO}
+
+## OBJETIVO:
+Educar o leitor sobre {CATEGORIA} e ajudá-lo a tomar a melhor decisão de compra.
+
+## ESTRUTURA:
+1. INTRODUÇÃO: O que é {PRODUTO} e por que é importante
+2. FATORES CRÍTICOS ao escolher (lista detalhada)
+3. TERMINOLOGIA EXPLICADA (termos técnicos em português simples)
+4. MARCAS E MODELOS RECOMENDADOS (com prós e contras de cada)
+5. DICAS DE MANUTENÇÃO e cuidados importantes
+6. PERGUNTAS PARA FAZER ANTES DE COMPRAR
+7. RECOMENDAÇÕES POR ORÇAMENTO (baixo, médio, alto)
+
+## FOCO NO CONSUMIDOR BRASILEIRO:
+- Preços em Reais
+- Disponibilidade no Brasil
+- Garantia e suporte técnico local
+- Compatibilidade com rede elétrica brasileira
+
+## DICAS PRÁTICAS:
+- Como testar antes de comprar
+- Onde encontrar promoções
+- Como negociar garantia estendida
+- O que verificar na nota fiscal
+
+## FORMATAÇÃO:
+- Listas explicativas
+- Destaques para informações importantes
+- Links para reviews específicos
+- Exemplos reais de uso
+
+Retorne um guia completo e educativo em HTML.

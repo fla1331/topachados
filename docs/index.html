@@ -1,190 +1,363 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Achadinhos Online</title>
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
-    body{background:#f9f9f9;color:#333;}
-
-    header{background:#d62828;padding:20px;display:flex;justify-content:space-between;align-items:center;}
-    .logo{display:flex;align-items:center;gap:12px;}
-    .logo svg{width:48px;height:48px;}
-    nav a{margin-left:20px;color:#fff;text-decoration:none;font-weight:bold;}
-    nav a:hover{opacity:.8;}
-
-    .hero{position:relative;padding:100px 20px;text-align:center;background:url('https://images.unsplash.com/photo-1491553895911-0055eca6402d') center/cover no-repeat;color:#fff;}
-    .hero::after{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.45);} 
-    .hero *{position:relative;z-index:2;} 
-    .hero h1{font-size:38px;margin-bottom:15px;color:#fff;} 
-    .hero p{font-size:18px;max-width:750px;margin:auto;color:#eee;}
-    .hero h1{font-size:36px;margin-bottom:15px;}
-    .hero p{font-size:18px;color:#555;max-width:750px;margin:auto;}
-
-    .section-title{font-size:26px;margin:40px 20px 10px;color:#d62828;font-weight:bold;}
-
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;padding:20px;}
-    .card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.1);transition:.3s;}
-    .card:hover{transform:translateY(-6px);} 
-    .card img{width:100%;height:190px;object-fit:cover;}
-    .card-content{padding:20px;}
-
-    .featured{display:flex;flex-wrap:wrap;gap:20px;padding:20px;}
-    .featured-item{background:#fff;border-radius:12px;flex:1 1 300px;box-shadow:0 1px 5px rgba(0,0,0,0.12);padding:20px;}
-    .featured-item h3{font-size:20px;margin-bottom:10px;}
-
-    footer{background:#222;color:#ccc;text-align:center;padding:40px 20px;margin-top:40px;}
-    footer a{color:#ccc;margin:0 10px;text-decoration:none;}
-    footer a:hover{color:#fff;}
-
-    @media(max-width:600px){
-      .hero h1{font-size:28px;}
-      header{flex-direction:column;gap:15px;}
-      nav a{margin-left:0;margin:0 10px;}
-    }
-  .hero{position:relative;padding:120px 20px;text-align:center;color:#fff;overflow:hidden;}
-    .hero-video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1;}
-    .hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.65);z-index:2;}
-    .hero-content{position:relative;z-index:3;}
-    .hero h1{font-size:40px;margin-bottom:15px;color:#fff;}
-    .hero p{font-size:18px;color:#ddd;max-width:780px;margin:auto;}
-</style>
-<style>
-    .menu-btn{display:none;cursor:pointer;}
-    .menu-btn div{width:30px;height:4px;background:#fff;margin:6px 0;border-radius:3px;}
-    @media(max-width:768px){nav{display:none;flex-direction:column;background:#d62828;width:100%;padding:20px;}header.open nav{display:contents;}
-    .menu-btn{display:block;}}
-  </style>
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
- <script src="https://topofertas.reviewnexus.blog/assets/js/components.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Ofertas - Os Melhores Achadinhos Online</title>
+    <meta name="description" content="Encontre as melhores ofertas, cupons de desconto e reviews honestos dos produtos mais populares. Economize com o Top Ofertas!">
+    <meta name="keywords" content="ofertas, descontos, cupons, promoções, compras online, reviews, produtos">
+    <meta name="author" content="Top Ofertas">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Top Ofertas - Os Melhores Achadinhos Online">
+    <meta property="og:description" content="Encontre as melhores ofertas, cupons de desconto e reviews honestos dos produtos mais populares.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=630&fit=crop">
+    <meta property="og:url" content="https://topofertas.reviewnexus.blog/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Top Ofertas">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        :root {
+            --primary-color: #1a3a8f;
+            --secondary-color: #28a745;
+            --accent-color: #ff6b00;
+            --light-bg: #f8f9fa;
+            --dark-bg: #1a1a1a;
+            --text-color: #333;
+            --text-light: #666;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, rgba(26, 58, 143, 0.05), rgba(255, 107, 0, 0.05));
+            border-radius: 20px;
+            margin: 40px auto;
+            max-width: 800px;
+        }
+        
+        .logo-large {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .logo-large svg {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 20px;
+        }
+        
+        .logo-large h1 {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin: 0;
+            font-weight: 700;
+        }
+        
+        .slogan {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            font-weight: 300;
+            margin-top: 10px;
+            border-top: 2px solid rgba(255, 107, 0, 0.2);
+            padding-top: 20px;
+            max-width: 500px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), #2a4bbf);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(26, 58, 143, 0.2);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: var(--primary-color);
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-color);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-card i {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .logo-large h1 {
+                font-size: 2.5rem;
+            }
+            
+            .slogan {
+                font-size: 1.2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
- 
-   <!-- OVERLAY PARA FECHAR MENU (MOBILE) -->
-  <div class="nav-overlay" id="navOverlay"></div>
+    <!-- CABEÇALHO -->
+    <header>
+        <div class="container header-container">
+            <!-- LOGO -->
+            <div class="logo-container">
+                <a href="https://topofertas.reviewnexus.blog/" class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff" stroke="#1a3a8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <h1 class="site-title">Top Ofertas</h1>
+                </a>
+            </div>
 
-  <div id="header-placeholder"></div>
+            <!-- BOTÃO HAMBÚRGUER -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu de navegação">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
+            </button>
 
+            <!-- MENU DE NAVEGAÇÃO -->
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="https://topofertas.reviewnexus.blog/">Início</a></li>
+                    <li><a href="https://topofertas.reviewnexus.blog/sobre-nos">Sobre Nós</a></li>  
+                    <li><a href="https://topofertas.reviewnexus.blog/contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="container main-container">
+        <div class="hero">
+            <div class="logo-large">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#1a3a8f" stroke="#ff6b00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+                <h1>Top Ofertas</h1>
+            </div>
+            <p class="slogan">Os melhores achadinhos online</p>
+            
+            <div class="cta-buttons">
+                <!--<a href="#categorias" class="btn-primary">
+                    <i class="fas fa-search"></i> Buscar Ofertas
+                </a>-->
+                <a href="sobre-nos.html" class="btn-secondary">
+                    <i class="fas fa-info-circle"></i> Sobre Nós
+                </a>
+            </div>
+        </div>
+        
+        <div class="features">
+            <div class="feature-card">
+                <i class="fas fa-percentage"></i>
+                <h3>Descontos Reais</h3>
+                <p>Encontre as melhores ofertas e cupons de desconto verificados diariamente.</p>
+            </div>
+            
+            <div class="feature-card">
+                <i class="fas fa-star"></i>
+                <h3>Reviews Honestos</h3>
+                <p>Análises detalhadas e imparciais dos produtos mais populares do mercado.</p>
+            </div>
+            
+            <div class="feature-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Links Seguros</h3>
+                <p>Todas as ofertas são verificadas para garantir sua segurança nas compras.</p>
+            </div>
+            
+            <div class="feature-card">
+                <i class="fas fa-bolt"></i>
+                <h3>Atualização Diária</h3>
+                <p>Novas ofertas e promoções atualizadas todos os dias para você economizar.</p>
+            </div>
+        </div>
+        
+        <!--<section id="categorias" style="text-align: center; margin: 60px 0;">
+            <h2 style="color: var(--primary-color); margin-bottom: 40px;">Principais Categorias</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                <a href="computadores/" style="text-decoration: none; color: inherit;">
+                    <div style="background: white; padding: 25px; border-radius: 10px; border: 2px solid var(--border-color, #e1e5eb); transition: all 0.3s ease;">
+                        <i class="fas fa-laptop" style="font-size: 2rem; color: var(--primary-color); margin-bottom: 15px;"></i>
+                        <h3 style="color: var(--primary-color); margin: 10px 0;">Computadores</h3>
+                        <p style="color: var(--text-light);">Notebooks, desktops e acessórios</p>
+                    </div>
+                </a>
+                
+                <a href="eletronicos/" style="text-decoration: none; color: inherit;">
+                    <div style="background: white; padding: 25px; border-radius: 10px; border: 2px solid var(--border-color, #e1e5eb); transition: all 0.3s ease;">
+                        <i class="fas fa-mobile-alt" style="font-size: 2rem; color: var(--primary-color); margin-bottom: 15px;"></i>
+                        <h3 style="color: var(--primary-color); margin: 10px 0;">Eletrônicos</h3>
+                        <p style="color: var(--text-light);">Smartphones, tablets e gadgets</p>
+                    </div>
+                </a>
+                
+                <a href="games/" style="text-decoration: none; color: inherit;">
+                    <div style="background: white; padding: 25px; border-radius: 10px; border: 2px solid var(--border-color, #e1e5eb); transition: all 0.3s ease;">
+                        <i class="fas fa-gamepad" style="font-size: 2rem; color: var(--primary-color); margin-bottom: 15px;"></i>
+                        <h3 style="color: var(--primary-color); margin: 10px 0;">Games</h3>
+                        <p style="color: var(--text-light);">Consoles, jogos e acessórios</p>
+                    </div>
+                </a>
+            </div>
+        </section>-->
+    </main>
+    
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <a href="https://topofertas.reviewnexus.blog/" class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff" stroke="#1a3a8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <h1 class="site-title">Top Ofertas</h1>
+                </a>
+                <p>Os melhores achadinhos online.</p>
+            </div>
+            <nav class="footer-nav">
+                <a href="https://topofertas.reviewnexus.blog/sobre-nos/">Sobre Nós</a>
+                <a href="https://topofertas.reviewnexus.blog/termos-de-uso/">Termos de Uso</a>
+                <a href="https://topofertas.reviewnexus.blog/politica-de-privacidade/">Política de Privacidade</a>
+                <a href="https://topofertas.reviewnexus.blog/contato/">Contato</a>
+            </nav>
+        </div>
+        <div class="copyright">
+            <p>© 2025 Top Ofertas. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 
-  <section class="hero" id="home">
-      <video autoplay muted loop playsinline class="hero-video">
-        <source src="https://cdn.coverr.co/videos/coverr-shopping-bags-4611/1080p.mp4" type="video/mp4" />
-      </video>
-      <div class="overlay"></div>
-      <div class="hero-content">
-        <h1>Os melhores achados em um só lugar</h1>
-        <p>Seleção diária de produtos incríveis, ofertas exclusivas e itens que realmente valem a pena.</p>
-      </div>
-    </section>
-
-  <h2 class="section-title">Destaques do Dia</h2>
-  <section class="featured">
-    <div class="featured-item">
-      <h3>Promoções Imperdíveis</h3>
-      <p>Uma curadoria rápida com opções que chamam atenção pelo preço e utilidade. Ideal para quem gosta de praticidade.</p>
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="cookie-banner">
+        <p>Usamos cookies para melhorar sua experiência de navegação 
+            <a href="https://topofertas.reviewnexus.blog/politica-de-privacidade">Saiba mais</a>.</p>
+        <button id="acceptCookies">Aceitar</button>
+        <button id="declineCookies">Recusar</button>
     </div>
-
-    <div class="featured-item">
-      <h3>Achados Populares</h3>
-      <p>Itens que costumam agradar a maioria das pessoas, perfeitos para deixar a home mais completa desde o início.</p>
-    </div>
-
-    <div class="featured-item">
-      <h3>Seleção para Casa</h3>
-      <p>Produtos úteis, funcionais e bonitos para o dia a dia. Uma prévia do que você ainda vai organizar como artigos completos.</p>
-    </div>
-  </section>
-
-  <h2 class="section-title">Sugestões Recentes</h2>
-  <section class="grid"  id="posts">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1513709630908-72d7cf852e64" />
-      <div class="card-content">
-        <h3>Achadinho Interessante</h3>
-        <p>Um resumo rápido para preencher o layout e deixar tudo pronto para os próximos artigos.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad" />
-      <div class="card-content">
-        <h3>Achado da Semana</h3>
-        <p>Uma descrição simples para manter o site visualmente completo e organizado.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1515165562835-c7d2ee0b7a9e" />
-      <div class="card-content">
-        <h3>Descoberta Útil</h3>
-        <p>Ajuda a montar uma home robusta e mais próxima de um tema premium profissional.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1503602642458-232111445657" />
-      <div class="card-content">
-        <h3>Achado Popular</h3>
-        <p>Mais um bloco para reforçar volume e deixar o layout mais cheio para aprovação do Adsense.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f" />
-      <div class="card-content">
-        <h3>Recomendação Especial</h3>
-        <p>Ideal para destacar variedade enquanto você prepara os artigos completos.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" />
-      <div class="card-content">
-        <h3>Seleção Curada</h3>
-        <p>Um preenchimento elegante que deixa a página mais densa e profissional.</p>
-      </div>
-    </div>
-  </section>
-
-  
-
-  
-
-  <section id="sobre" style="padding:60px 20px;max-width:900px;margin:auto;line-height:1.6;">
-    <h2 class="section-title" style="margin-top:0;">Sobre</h2>
-    <p>O Top Ofertas nasceu da ideia de facilitar a vida de quem gosta de descobrir produtos úteis, promoções reais e itens que fazem diferença no dia a dia. Esse espaço reúne achados atualizados, sugestões selecionadas com cuidado e uma curadoria que prioriza preço justo e qualidade.</p>
-  </section>
-
-  <section id="contato" style="padding:60px 20px;max-width:900px;margin:auto;line-height:1.6; text-align:center;">
-    <h2 class="section-title" style="margin-top:0;">Contato</h2>
-    <p style="margin-bottom:20px;">Entre em contato pelo email abaixo:</p>
-    <div style="display:flex;flex-direction:column;align-items:center;gap:18px;">
-      <svg width="72" height="72" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 3px 6px rgba(0,0,0,0.25));">
-        <rect x="4" y="8" width="40" height="30" rx="6" fill="#d62828"/>
-        <path d="M8 12l16 12L40 12" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <a href="mailto:fls_ctba@hotmail.com" style="font-size:22px;color:#d62828;text-decoration:none;font-weight:bold;">fls_ctba@hotmail.com</a>
-    </div>
-  </section>
-
-   <div id="footer-placeholder"></div>
-
-<script>
-    document.querySelectorAll('nav a').forEach(link=>{
-      link.addEventListener('click',e=>{
-        const href = link.getAttribute('href');
-        if(href.startsWith('#')){
-          e.preventDefault();
-          const alvo = document.querySelector(href);
-          if(alvo){
-            window.scrollTo({top: alvo.offsetTop-70, behavior:'smooth'});
-          }
+    
+    <script>
+        // Menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
+                menuToggle.classList.toggle('active');
+            });
         }
-      });
-    });
-  </script>
-</body>
-</html>
+        
+        // Cookie banner
+        const cookieBanner = document.getElementById('cookie-banner');
+        const acceptCookies = document.getElementById('acceptCookies');
+        const declineCookies = document.getElementById('declineCookies');
+        
+        if (!localStorage.getItem('cookiesAccepted')) {
+            setTimeout(() => {
+                if (cookieBanner) cookieBanner.style.display = 'block';
+            }, 1000);
+        }
+        
+        if (acceptCookies) {
+            acceptCookies.addEventListener('click', () => {
+                localStorage.setItem('cookiesAccepted', 'true');
+                if (cookieBanner) cookieBanner.style.display = 'none';
+            });
+        }
+        
+        if (declineCookies) {
+            declineCookies.addEventListener('click', () => {
+                localStorage.setItem('cookiesAccepted', 'false');
+                if (cookieBanner) cookieBanner.style.display = 'none';
+            });
+        }
+    </script>
 </body>
 </html>

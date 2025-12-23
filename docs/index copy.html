@@ -1,123 +1,190 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Top Ofertas | Seu Guia para Descontos e Oportunidades Verificadas</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Montserrat:wght@800&display=swap" rel="stylesheet">
-    <style>
-      
-        :root {
-            --color-bg-dark: #fff; /* Fundo principal quase preto */
-            --color-accent: #1e90ff; /* Azul Profundo */
-            --color-text-light: #333;
-            --color-footer-dark: #af1a1a;
-            --font-display: 'Montserrat', sans-serif;
-            --font-body: 'Inter', sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Achadinhos Online</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+    body{background:#f9f9f9;color:#333;}
 
-        body {
-            font-family: var(--font-body);
-            background-color: var(--color-bg-dark);
-            color: var(--color-text-light);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+    header{background:#d62828;padding:20px;display:flex;justify-content:space-between;align-items:center;}
+    .logo{display:flex;align-items:center;gap:12px;}
+    .logo svg{width:48px;height:48px;}
+    nav a{margin-left:20px;color:#fff;text-decoration:none;font-weight:bold;}
+    nav a:hover{opacity:.8;}
 
-        .header-bg {
-            background-color: var(--color-footer-dark);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .main-content {
-            
-            background: #fff;
-            flex-grow: 1;
-        }
+    .hero{position:relative;padding:100px 20px;text-align:center;background:url('https://images.unsplash.com/photo-1491553895911-0055eca6402d') center/cover no-repeat;color:#fff;}
+    .hero::after{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.45);} 
+    .hero *{position:relative;z-index:2;} 
+    .hero h1{font-size:38px;margin-bottom:15px;color:#fff;} 
+    .hero p{font-size:18px;max-width:750px;margin:auto;color:#eee;}
+    .hero h1{font-size:36px;margin-bottom:15px;}
+    .hero p{font-size:18px;color:#555;max-width:750px;margin:auto;}
 
-        /* Animação de brilho sutil em Azul */
-        .glowing-text {
-            text-shadow: 0 0 10px rgba(30, 144, 255, 0.5);
-            animation: pulse-glow 3s infinite ease-in-out;
-        }
+    .section-title{font-size:26px;margin:40px 20px 10px;color:#d62828;font-weight:bold;}
 
-        @keyframes pulse-glow {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
-        }
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;padding:20px;}
+    .card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.1);transition:.3s;}
+    .card:hover{transform:translateY(-6px);} 
+    .card img{width:100%;height:190px;object-fit:cover;}
+    .card-content{padding:20px;}
 
-        .icon-star {
-            color: var(--color-accent);
-        }
-        footer {background: var(--color-footer-dark);}
-    </style>
+    .featured{display:flex;flex-wrap:wrap;gap:20px;padding:20px;}
+    .featured-item{background:#fff;border-radius:12px;flex:1 1 300px;box-shadow:0 1px 5px rgba(0,0,0,0.12);padding:20px;}
+    .featured-item h3{font-size:20px;margin-bottom:10px;}
+
+    footer{background:#222;color:#ccc;text-align:center;padding:40px 20px;margin-top:40px;}
+    footer a{color:#ccc;margin:0 10px;text-decoration:none;}
+    footer a:hover{color:#fff;}
+
+    @media(max-width:600px){
+      .hero h1{font-size:28px;}
+      header{flex-direction:column;gap:15px;}
+      nav a{margin-left:0;margin:0 10px;}
+    }
+  .hero{position:relative;padding:120px 20px;text-align:center;color:#fff;overflow:hidden;}
+    .hero-video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1;}
+    .hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.65);z-index:2;}
+    .hero-content{position:relative;z-index:3;}
+    .hero h1{font-size:40px;margin-bottom:15px;color:#fff;}
+    .hero p{font-size:18px;color:#ddd;max-width:780px;margin:auto;}
+</style>
+<style>
+    .menu-btn{display:none;cursor:pointer;}
+    .menu-btn div{width:30px;height:4px;background:#fff;margin:6px 0;border-radius:3px;}
+    @media(max-width:768px){nav{display:none;flex-direction:column;background:#d62828;width:100%;padding:20px;}header.open nav{display:contents;}
+    .menu-btn{display:block;}}
+  </style>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+ <script src="https://topofertas.reviewnexus.blog/assets/js/components.js"></script>
 </head>
 <body>
+ 
+   <!-- OVERLAY PARA FECHAR MENU (MOBILE) -->
+  <div class="nav-overlay" id="navOverlay"></div>
 
-    <!-- Header Padrão - Logo/Título -->
-    <header class="header-bg p-4 sticky top-0 z-10">
-         <div class="logo-container p-6 sm:p-8 rounded-3xl flex items-center space-x-4">
-        <!-- Ícone Estilizado: Lupa / Pin de Achadinho -->
-        <div class="search-pin w-14 h-14 sm:w-20 sm:h-20 rounded-full flex flex-col items-center justify-center">
-            <!-- SVG: Sacola de Compras  -->
-            <svg class="w-8 h-8 sm:w-10 sm:h-10 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <path d="M16 10a4 4 0 0 1-8 0"></path>
-            </svg>
-        </div>
+  <div id="header-placeholder"></div>
 
-        <!-- Logo -->
-        <div style="margin-left: 0;">
-            <span class="block text-xl sm:text-2xl font-bold tracking-wider uppercase text-gray-500 leading-tight">
-                TOP
-            </span>
-            <span class="block text-4xl sm:text-5xl font-black tracking-tighter uppercase text-ofertas leading-none">
-                OFERTAS
-            </span>
-          
-        </div>
+
+  <section class="hero" id="home">
+      <video autoplay muted loop playsinline class="hero-video">
+        <source src="https://cdn.coverr.co/videos/coverr-shopping-bags-4611/1080p.mp4" type="video/mp4" />
+      </video>
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h1>Os melhores achados em um só lugar</h1>
+        <p>Seleção diária de produtos incríveis, ofertas exclusivas e itens que realmente valem a pena.</p>
+      </div>
+    </section>
+
+  <h2 class="section-title">Destaques do Dia</h2>
+  <section class="featured">
+    <div class="featured-item">
+      <h3>Promoções Imperdíveis</h3>
+      <p>Uma curadoria rápida com opções que chamam atenção pelo preço e utilidade. Ideal para quem gosta de praticidade.</p>
     </div>
-    </header>
 
-    <!-- Conteúdo Principal - Bem-Vindo Estático -->
-    <main class="main-content flex items-center justify-center p-8">
-        <div class="text-center max-w-4xl space-y-8">
-            <!-- Frase de Boas-Vindas Criativa -->
-            <p class="text-xl sm:text-2xl font-semibold glowing-text">
-                O seu atalho para as melhores promoções e descontos do Brasil.
-            </p>
-            <h2 class="text-5xl sm:text-7xl font-black text-white leading-tight uppercase" style="font-family: var(--font-display);">
-                Bem-vindo ao Top Ofertas.
-            </h2>
-            <p class="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto">
-                Filtramos o ruído e entregamos apenas os melhores produtos, ofertas imperdíveis e oportunidades verificadas das principais varejistas online.
-            </p>
+    <div class="featured-item">
+      <h3>Achados Populares</h3>
+      <p>Itens que costumam agradar a maioria das pessoas, perfeitos para deixar a home mais completa desde o início.</p>
+    </div>
 
-            <!-- Placeholder visual para o conteúdo futuro -->
-            <div class="mt-16 text-gray-400 text-base">
-                <p class="mb-2">Estamos selecionando os primeiros reviews focados em custo-benefício e qualidade.</p>
-                
-                <!-- Ícones representativos das ofertas -->
-                <span class="mx-2 text-2xl" style="color:var(--color-accent);">💸</span> 
-                <span class="mx-2 text-2xl" style="color:var(--color-accent);">🎁</span> 
-                <span class="mx-2 text-2xl" style="color:var(--color-accent);">🔥</span> 
-                <span class="mx-2 text-2xl" style="color:var(--color-accent);">💯</span>
-                
-                <p class="mt-4 font-semibold text-white">Artigos e ofertas completas chegando em breve!</p>
-            </div>
-        </div>
-    </main>
+    <div class="featured-item">
+      <h3>Seleção para Casa</h3>
+      <p>Produtos úteis, funcionais e bonitos para o dia a dia. Uma prévia do que você ainda vai organizar como artigos completos.</p>
+    </div>
+  </section>
 
-    <!-- Footer Padrão - Apenas Texto Legal/Direitos -->
-    <footer class="bg-gray-900 text-gray-400 py-8 border-t border-gray-800">
-        <div class="container mx-auto px-4 max-w-7xl text-center">
-            <p class="text-xs">&copy; 2025 Top Ofertas. Review Nexus. Todos os direitos reservados.</p>
-        </div>
-    </footer>
+  <h2 class="section-title">Sugestões Recentes</h2>
+  <section class="grid"  id="posts">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1513709630908-72d7cf852e64" />
+      <div class="card-content">
+        <h3>Achadinho Interessante</h3>
+        <p>Um resumo rápido para preencher o layout e deixar tudo pronto para os próximos artigos.</p>
+      </div>
+    </div>
 
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad" />
+      <div class="card-content">
+        <h3>Achado da Semana</h3>
+        <p>Uma descrição simples para manter o site visualmente completo e organizado.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1515165562835-c7d2ee0b7a9e" />
+      <div class="card-content">
+        <h3>Descoberta Útil</h3>
+        <p>Ajuda a montar uma home robusta e mais próxima de um tema premium profissional.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1503602642458-232111445657" />
+      <div class="card-content">
+        <h3>Achado Popular</h3>
+        <p>Mais um bloco para reforçar volume e deixar o layout mais cheio para aprovação do Adsense.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f" />
+      <div class="card-content">
+        <h3>Recomendação Especial</h3>
+        <p>Ideal para destacar variedade enquanto você prepara os artigos completos.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" />
+      <div class="card-content">
+        <h3>Seleção Curada</h3>
+        <p>Um preenchimento elegante que deixa a página mais densa e profissional.</p>
+      </div>
+    </div>
+  </section>
+
+  
+
+  
+
+  <section id="sobre" style="padding:60px 20px;max-width:900px;margin:auto;line-height:1.6;">
+    <h2 class="section-title" style="margin-top:0;">Sobre</h2>
+    <p>O Top Ofertas nasceu da ideia de facilitar a vida de quem gosta de descobrir produtos úteis, promoções reais e itens que fazem diferença no dia a dia. Esse espaço reúne achados atualizados, sugestões selecionadas com cuidado e uma curadoria que prioriza preço justo e qualidade.</p>
+  </section>
+
+  <section id="contato" style="padding:60px 20px;max-width:900px;margin:auto;line-height:1.6; text-align:center;">
+    <h2 class="section-title" style="margin-top:0;">Contato</h2>
+    <p style="margin-bottom:20px;">Entre em contato pelo email abaixo:</p>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:18px;">
+      <svg width="72" height="72" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 3px 6px rgba(0,0,0,0.25));">
+        <rect x="4" y="8" width="40" height="30" rx="6" fill="#d62828"/>
+        <path d="M8 12l16 12L40 12" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <a href="mailto:fls_ctba@hotmail.com" style="font-size:22px;color:#d62828;text-decoration:none;font-weight:bold;">fls_ctba@hotmail.com</a>
+    </div>
+  </section>
+
+   <div id="footer-placeholder"></div>
+
+<script>
+    document.querySelectorAll('nav a').forEach(link=>{
+      link.addEventListener('click',e=>{
+        const href = link.getAttribute('href');
+        if(href.startsWith('#')){
+          e.preventDefault();
+          const alvo = document.querySelector(href);
+          if(alvo){
+            window.scrollTo({top: alvo.offsetTop-70, behavior:'smooth'});
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
 </body>
 </html>

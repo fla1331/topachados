@@ -1,0 +1,93 @@
+# TEMPLATE PARA PRE-LANDING PAGE - {PRODUTO}
+
+## INFORMAÇÕES BÁSICAS:
+- PRODUTO: {PRODUTO}
+- CATEGORIA: {CATEGORIA}
+- IDIOMA: {IDIOMA}
+- ANO: {ANO_ATUAL}
+- LINK PRINCIPAL: {LINK_AFILIADO}
+
+## OBJETIVO:
+Converter visitantes em clientes através de uma página persuasiva focada em resolver um problema específico.
+
+## PÚBLICO-ALVO:
+Pessoas com um problema específico que {PRODUTO} resolve, buscando solução imediata.
+
+## PROBLEMA PRINCIPAL:
+[IDENTIFICAR O PROBLEMA QUE {PRODUTO} RESOLVE]
+
+## ESTRUTURA DA PRE-LANDING:
+1. TÍTULO IMPACTANTE
+   - Focado na dor do cliente
+   - Promessa clara de solução
+   - Gatilho emocional
+
+2. AMPLIFICAÇÃO DO PROBLEMA
+   - Consequências de não resolver
+   - Impacto na vida diária
+   - Custos da inação
+
+3. APRESENTAÇÃO DA SOLUÇÃO
+   - {PRODUTO} como resposta
+   - Como funciona (simples)
+   - Benefício principal
+
+4. BENEFÍCIOS EMOCIONAIS E RACIONAIS
+   - Lista de benefícios principais
+   - Transformação prometida
+   - Resultados esperados
+
+5. PROVA SOCIAL
+   - Depoimentos fictícios convincentes
+   - Histórias de sucesso
+   - Números e estatísticas
+
+6. DIFERENCIAIS COMPETITIVOS
+   - Por que é melhor que alternativas
+   - Vantagens exclusivas
+   - Inovação e tecnologia
+
+7. OFERTA IRRECUSÁVEL
+   - Preço especial (desconto)
+   - Bônus exclusivos
+   - Garantia estendida
+
+8. CHAMADA PARA AÇÃO
+   - Botão grande e visível
+   - Texto persuasivo
+   - Urgência e escassez
+
+9. GARANTIA E SEGURANÇA
+   - Remoção de objeções
+   - Política de devolução
+   - Selos de segurança
+
+10. FAQ ANTIOBJEÇÕES
+    - Perguntas de quem hesita
+    - Respostas convincentes
+    - Clareza e transparência
+
+## TÉCNICAS DE PERSUASÃO:
+- Gatilhos mentais (urgência, escassez, prova social)
+- Copywriting emocional
+- Storytelling persuasivo
+- Foco na transformação
+
+## TOM E ESTILO:
+- Persuasivo e urgente
+- Empático e compreensivo
+- Confiante e autoritário
+- Claro e direto
+
+## REQUISITOS TÉCNICOS:
+- HTML otimizado para conversão
+- Múltiplos CTAs
+- Design limpo e focado
+- Conteúdo 100% em {IDIOMA}
+
+## LINKS:
+- Múltiplos links para {LINK_AFILIADO}
+- Links de segurança e garantia
+- Link para política de privacidade
+
+Retorne APENAS o HTML completo da pre-landing, sem comentários extras.
