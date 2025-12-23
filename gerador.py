@@ -2364,7 +2364,7 @@ Retorne APENAS o HTML completo da análise técnica, sem comentários extras."""
                 <h3><i class="fas fa-info-circle"></i> Information</h3>
                 <ul class="site-links">
                     <li><a href="{self.calcular_caminho_relativo(f'{categoria}/{produto_slug}/', 'sobre-nos.html')}">About Us</a></li>
-                    <li><a href="{self.calcular_caminho_relativo(f'{categoria}/{produto_slug}/', 'politica-privacidade.html')}">Privacy Policy</a></li>
+                    <li><a href="{self.calcular_caminho_relativo(f'{categoria}/{produto_slug}/', 'politica-de-privacidade.html')}">Privacy Policy</a></li>
                     <li><a href="{self.calcular_caminho_relativo(f'{categoria}/{produto_slug}/', 'contato.html')}">Contact</a></li>
                 </ul>
             </div>
@@ -2398,7 +2398,7 @@ Retorne APENAS o HTML completo da análise técnica, sem comentários extras."""
                 <h3><i class="fas fa-info-circle"></i> Informações</h3>
                 <ul class="site-links">
                     <li><a href="{self.calcular_caminho_relativo(f'{categoria}/{produto_slug}/', 'sobre-nos.html')}">Sobre Nós</a></li>
-                    <li><a href="{self.calcular_caminho_relativo(f'{categoria}/{produto_slug}/', 'politica-privacidade.html')}">Política de Privacidade</a></li>
+                    <li><a href="{self.calcular_caminho_relativo(f'{categoria}/{produto_slug}/', 'politica-de-privacidade.html')}">Política de Privacidade</a></li>
                     <li><a href="{self.calcular_caminho_relativo(f'{categoria}/{produto_slug}/', 'contato.html')}">Contato</a></li>
                 </ul>
             </div>
@@ -2653,7 +2653,7 @@ Retorne APENAS o HTML completo da análise técnica, sem comentários extras."""
                 <h4>Links</h4>
                 <a href="../sobre-nos.html">About</a>
                 <a href="../contato.html">Contact</a>
-                <a href="../politica-privacidade.html">Privacy</a>
+                <a href="../politica-de-privacidade.html">Privacy</a>
             </div>
         </div>
         <p class="copyright">&copy; {ano_atual} Top Offers. All rights reserved.</p>
@@ -2671,7 +2671,7 @@ Retorne APENAS o HTML completo da análise técnica, sem comentários extras."""
                 <h4>Links</h4>
                 <a href="../sobre-nos.html">Sobre</a>
                 <a href="../contato.html">Contato</a>
-                <a href="../politica-privacidade.html">Privacidade</a>
+                <a href="../politica-de-privacidade.html">Privacidade</a>
             </div>
         </div>
         <p class="copyright">&copy; {ano_atual} Top Ofertas. Todos os direitos reservados.</p>
@@ -2774,7 +2774,7 @@ Retorne APENAS o HTML completo da análise técnica, sem comentários extras."""
         self.adicionar_url_sitemap(urlset, '', 1.0, 'daily')
         
         # Adicionar páginas estáticas
-        paginas = ['sobre-nos.html', 'politica-privacidade.html', 'contato.html']
+        paginas = ['sobre-nos.html', 'politica-de-privacidade.html', 'contato.html']
         for pagina in paginas:
             if (self.docs_dir / pagina).exists():
                 self.adicionar_url_sitemap(urlset, pagina, 0.5, 'monthly')
@@ -3801,7 +3801,7 @@ if __name__ == "__main__":
                     <h4>Links</h4>
                     <a href="sobre-nos.html">Sobre Nós</a>
                     <a href="contato.html">Contato</a>
-                    <a href="politica-privacidade.html">Política de Privacidade</a>
+                    <a href="politica-de-privacidade.html">Política de Privacidade</a>
                 </div>
             </div>
             <p class="copyright">&copy; 2025 Top Ofertas. Todos os direitos reservados.</p>

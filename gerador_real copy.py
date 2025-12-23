@@ -1267,7 +1267,7 @@ Retorne uma análise técnica profunda em HTML com dados específicos."""
                 <h3><i class="fas fa-info-circle"></i> Informações</h3>
                 <ul class="site-links">
                     <li><a href="{self.calcular_caminho_relativo(url_relativa, 'sobre-nos.html')}">Sobre Nós</a></li>
-                    <li><a href="{self.calcular_caminho_relativo(url_relativa, 'politica-privacidade.html')}">Privacidade</a></li>
+                    <li><a href="{self.calcular_caminho_relativo(url_relativa, 'politica-de-privacidade.html')}">Privacidade</a></li>
                     <li><a href="{self.calcular_caminho_relativo(url_relativa, 'contato.html')}">Contato</a></li>
                 </ul>
             </div>
@@ -1326,7 +1326,7 @@ Retorne uma análise técnica profunda em HTML com dados específicos."""
                 <h4>Links</h4>
                 <a href="../sobre-nos.html">Sobre</a>
                 <a href="../contato.html">Contato</a>
-                <a href="../politica-privacidade.html">Privacidade</a>
+                <a href="../politica-de-privacidade.html">Privacidade</a>
             </div>
         </div>
         <p class="copyright">&copy; 2024 Top Ofertas. Todos os direitos reservados.</p>
@@ -1425,7 +1425,7 @@ Retorne uma análise técnica profunda em HTML com dados específicos."""
         self.adicionar_url_sitemap(urlset, '', 1.0, 'daily')
         
         # Adicionar páginas estáticas
-        paginas = ['sobre-nos.html', 'politica-privacidade.html', 'contato.html']
+        paginas = ['sobre-nos.html', 'politica-de-privacidade.html', 'contato.html']
         for pagina in paginas:
             if (self.docs_dir / pagina).exists():
                 self.adicionar_url_sitemap(urlset, pagina, 0.5, 'monthly')
