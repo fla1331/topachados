@@ -1,0 +1,20 @@
+{
+  "notebook-dell-inspiron-15": {
+    "produto": "Notebook Dell Inspiron 15",
+    "slug": "notebook-dell-inspiron-15",
+    "data_processamento": "2025-12-24T00:13:23.277091",
+    "sucesso": false,
+    "tentativas": 1,
+    "categoria": "computadores",
+    "versao": 1
+  },
+  "fogao-cooktop-eletrico": {
+    "produto": "Fogão Cooktop Elétrico",
+    "slug": "fogao-cooktop-eletrico",
+    "data_processamento": "2025-12-24T00:13:31.292150",
+    "sucesso": false,
+    "tentativas": 1,
+    "categoria": "eletrodomesticos",
+    "versao": 1
+  }
+}
