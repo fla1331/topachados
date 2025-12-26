@@ -1017,13 +1017,7 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height
 .article-meta { display: flex; flex-wrap: wrap; gap: 15px; color: #666; font-size: 0.9rem; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
 .article-meta span { display: flex; align-items: center; gap: 5px; }
 .featured-image { width: 100%; height: 400px; object-fit: cover; border-radius: 10px; margin: 25px 0; }
-.article-body { font-size: 1.05rem; line-height: 1.8; }
-.article-body h2 { color: #1a3a8f; margin: 30px 0 15px; }
-.article-body h3 { color: #2c3e50; margin: 25px 0 12px; }
-.article-body table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-.article-body th { background: #f8f9fa; padding: 12px; text-align: left; border: 1px solid #ddd; }
-.article-body td { padding: 12px; border: 1px solid #ddd; }
-.article-body ul, .article-body ol { margin: 15px 0; padding-left: 20px; }
+
 
 /* Sidebar */
 .sidebar { position: sticky; top: 20px; align-self: start; }
@@ -1220,7 +1214,7 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height
 
             <img src="{imagem_principal}" alt="{alt_imagem}" class="featured-image">
 
-            <div class="article-body">
+            <div class="article-content">
                 {conteudo_html if conteudo_html else '<p>Conteúdo do artigo...</p>'}
             </div>
 
