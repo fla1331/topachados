@@ -153,7 +153,7 @@ DESCRIPTION:
 <meta description otimizada>
 
 ARTICLE:
-<article>conteúdo refinado aqui...</article>
+<article class="content">conteúdo refinado aqui...</article>
 """
 
 def criar_slug(texto):
@@ -248,7 +248,7 @@ DESCRIPTION:
 {description}
 
 ARTICLE:
-<article>
+<article class="content">
 {article}
 </article>
 

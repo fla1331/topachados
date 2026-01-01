@@ -66,6 +66,9 @@ class GeradorReal:
         
         # Criar templates básicos se não existirem
         self.criar_templates_prompt_se_necessario()
+        
+        # Criar templates HTML básicos se não existirem
+        self.criar_templates_basicos()
     
     def criar_estrutura_pastas(self):
         """Cria pastas necessárias"""
@@ -665,7 +668,7 @@ Idioma: {idioma}"""
 - Conteúdo 100% em {IDIOMA}
 
 Retorne APENAS o HTML completo do artigo, sem comentários extras."""
-
+    
     def criar_template_guia(self):
         """Cria template para guia.txt"""
         return """# TEMPLATE PARA GUIA - Como escolher {PRODUTO}
@@ -694,7 +697,7 @@ Retorne APENAS o HTML completo do artigo, sem comentários extras."""
 - Acessível para todos os níveis
 
 Retorne APENAS o HTML completo do guia, sem comentários extras."""
-
+    
     def criar_template_preland(self):
         """Cria template para preland.txt"""
         return """# TEMPLATE PARA PRE-LANDING PAGE - {PRODUTO}
@@ -731,7 +734,7 @@ Retorne APENAS o HTML completo do guia, sem comentários extras."""
 - Claro e direto
 
 Retorne APENAS o HTML completo da pre-landing, sem comentários extras."""
-
+    
     def criar_template_comparativo(self):
         """Cria template para comparativo.txt"""
         return """# TEMPLATE PARA COMPARATIVO - {PRODUTO} vs Concorrentes
@@ -759,7 +762,7 @@ Retorne APENAS o HTML completo da pre-landing, sem comentários extras."""
 - Baseado em fatos
 
 Retorne APENAS o HTML completo do comparativo, sem comentários extras."""
-
+    
     def limpar_resposta_ia(self, texto):
         """Limpa a resposta da IA"""
         # Remove blocos de código markdown
@@ -908,6 +911,61 @@ Retorne APENAS o HTML completo do comparativo, sem comentários extras."""
 </div>
 """
     
+    def gerar_guia_basico(self, produto, categoria, site_oficial, link_afiliado, idioma='pt-BR'):
+        """Gera guia básico"""
+        if idioma.lower().startswith('en'):
+            return f"""
+<h2>Complete Guide: How to Choose {produto}</h2>
+
+<p>Choosing the right {produto} can be challenging. This comprehensive guide will help you make an informed decision.</p>
+
+<h3>Key Factors to Consider</h3>
+<ul>
+    <li><strong>Performance:</strong> Check the specifications and user reviews</li>
+    <li><strong>Compatibility:</strong> Ensure it works with your existing setup</li>
+    <li><strong>Budget:</strong> Set a realistic budget range</li>
+    <li><strong>Brand Reputation:</strong> Research the manufacturer's track record</li>
+</ul>
+
+<h3>Recommended Models</h3>
+<p>Based on current market analysis, here are the top recommendations:</p>
+<ul>
+    <li><strong>Entry Level:</strong> Basic features, affordable price</li>
+    <li><strong>Mid Range:</strong> Best value for money</li>
+    <li><strong>Premium:</strong> Top performance with advanced features</li>
+</ul>
+
+<h3>Where to Buy Safely</h3>
+<p>For guaranteed authenticity and best prices, purchase from authorized sellers:</p>
+<a href="{link_afiliado}" class="btn-comprar" target="_blank" rel="nofollow sponsored">View Current Deals →</a>
+"""
+        else:
+            return f"""
+<h2>Guia Completo: Como Escolher {produto}</h2>
+
+<p>Escolher o {produto} ideal pode ser desafiador. Este guia completo vai ajudá-lo a tomar uma decisão informada.</p>
+
+<h3>Fatores Importantes</h3>
+<ul>
+    <li><strong>Performance:</strong> Verifique especificações e avaliações de usuários</li>
+    <li><strong>Compatibilidade:</strong> Certifique-se que funciona com seu setup atual</li>
+    <li><strong>Orçamento:</strong> Defina uma faixa de preço realista</li>
+    <li><strong>Reputação da Marca:</strong> Pesquise o histórico do fabricante</li>
+</ul>
+
+<h3>Modelos Recomendados</h3>
+<p>Baseado na análise atual do mercado, aqui estão as principais recomendações:</p>
+<ul>
+    <li><strong>Básico:</strong> Funcionalidades essenciais, preço acessível</li>
+    <li><strong>Intermediário:</strong> Melhor custo-benefício</li>
+    <li><strong>Premium:</strong> Performance superior com recursos avançados</li>
+</ul>
+
+<h3>Onde Comprar com Segurança</h3>
+<p>Para autenticidade garantida e melhores preços, compre em vendedores autorizados:</p>
+<a href="{link_afiliado}" class="btn-comprar" target="_blank" rel="nofollow sponsored">Ver Ofertas Atuais →</a>
+"""
+    
     def gerar_preland_basica(self, produto, categoria, site_oficial, link_afiliado, idioma='pt-BR'):
         """Gera pre-landing page básica"""
         
@@ -990,6 +1048,8 @@ Retorne APENAS o HTML completo do comparativo, sem comentários extras."""
 </div>
 """
     
+    # ==================== TEMPLATES HTML BÁSICOS ====================
+    
     def criar_templates_basicos(self):
         """Cria templates básicos"""
         print("\n🎨 CRIANDO TEMPLATES BÁSICOS...")
@@ -1017,7 +1077,6 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height
 .article-meta { display: flex; flex-wrap: wrap; gap: 15px; color: #666; font-size: 0.9rem; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
 .article-meta span { display: flex; align-items: center; gap: 5px; }
 .featured-image { width: 100%; height: 400px; object-fit: cover; border-radius: 10px; margin: 25px 0; }
-
 
 /* Sidebar */
 .sidebar { position: sticky; top: 20px; align-self: start; }
@@ -1053,9 +1112,9 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height
             sidebar_content = '''<!-- Sidebar Template -->
 <div class="widget">
     <h3><i class="fas fa-bolt"></i> Oferta Especial</h3>
-    <p><strong>Desconto Exclusivo</strong></p>
+    <p><strong>Produto em Destaque</strong></p>
     <p>Aproveite nossa oferta por tempo limitado!</p>
-    <a href="#" class="btn-sidebar">Ver Oferta</a>
+    <a href="#" class="btn-sidebar">Saiba Mais</a>
 </div>
 
 <div class="widget">
@@ -1166,7 +1225,7 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height
         header = self.carregar_template("header.html") or self.criar_header_basico(idioma)
         footer = self.carregar_template("footer.html") or self.criar_footer_basico(idioma)
         
-        # SEMPRE criar sidebar dinâmica (não usar template fixo)
+        # Criar sidebar dinâmica SEM PREÇOS
         sidebar_content = self.criar_sidebar_conteudo(categoria, produto_slug, nome_original, link_afiliado, idioma, is_preland)
         
         # Se estiver usando IA, podemos pedir para a IA criar uma sidebar mais personalizada
@@ -1197,6 +1256,7 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height
 <html lang="{idioma_html}">
 <head>
     {self.criar_meta_tags_seo(titulo, descricao_seo, keywords_seo, url_relativa, imagem_principal, idioma)}
+    <script src="https://topofertas.reviewnexus.blog/assets/js/script.js" defer></script>
 </head>
 <body>
     {header}
@@ -1249,12 +1309,12 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height
             return None
     
     def criar_sidebar_com_ia(self, produto, categoria, link_afiliado, idioma='pt-BR'):
-        """Cria sidebar personalizada com IA"""
+        """Cria sidebar personalizada com IA SEM PREÇOS"""
         if not self.ia_api_key or not self.has_requests:
             return None
         
         try:
-            # Preparar prompt para criar sidebar personalizada
+            # Preparar prompt para criar sidebar personalizada SEM PREÇOS
             prompt = self.criar_prompt_sidebar(produto, categoria, link_afiliado, idioma)
             
             # Chamar IA
@@ -1270,7 +1330,7 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height
                 "messages": [
                     {
                         "role": "system", 
-                        "content": "Você é um especialista em criação de conteúdo para sidebars de sites de reviews. Crie conteúdo HTML válido e otimizado."
+                        "content": "Você é um especialista em criação de conteúdo para sidebars de sites de reviews. Crie conteúdo HTML válido e otimizado, SEM MENCIONAR PREÇOS OU VALORES."
                     },
                     {
                         "role": "user", 
@@ -1303,47 +1363,48 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height
             return None
     
     def criar_prompt_sidebar(self, produto, categoria, link_afiliado, idioma='pt-BR'):
-        """Cria prompt para gerar sidebar personalizada"""
+        """Cria prompt para gerar sidebar personalizada SEM PREÇOS"""
         if idioma.lower().startswith('en'):
             return f"""Create a personalized sidebar for a review article about {produto} in the {categoria} category.
 
 The sidebar should include:
-1. A special offer widget with discount and link: {link_afiliado}
+1. A special offer widget WITHOUT PRICES - just mention it's a limited time offer
 2. A "Related Products" section with 3-4 products from the same category
 3. An "Information" section with links (About Us, Contact, Privacy Policy)
 
+IMPORTANT: DO NOT mention any prices, values, discounts percentages, or specific monetary amounts.
+
 Make it HTML valid, with CSS classes that match: widget, btn-sidebar, etc.
 Create realistic product names related to {categoria}.
-Make the offer compelling with discounts between 15-30%.
 
 Return ONLY the HTML code, no explanations."""
         else:
             return f"""Crie uma sidebar personalizada para um artigo de review sobre {produto} na categoria {categoria}.
 
 A sidebar deve incluir:
-1. Um widget de oferta especial com desconto e link: {link_afiliado}
+1. Um widget de oferta especial SEM PREÇOS - apenas mencione que é uma oferta por tempo limitado
 2. Uma seção "Produtos Relacionados" com 3-4 produtos da mesma categoria
 3. Uma seção "Informações" com links (Sobre Nós, Contato, Política de Privacidade)
 
+IMPORTANTE: NÃO mencione preços, valores, porcentagens de desconto ou quantias monetárias específicas.
+
 Faça HTML válido, com classes CSS que combinem: widget, btn-sidebar, etc.
 Crie nomes de produtos realistas relacionados a {categoria}.
-Torne a oferta atraente com descontos entre 15-30%.
 
 Retorne APENAS o código HTML, sem explicações."""
     
-    # No método criar_sidebar_conteudo, remova a parte de preços:
-def criar_sidebar_conteudo(self, categoria, produto_slug, nome_original, link_afiliado, idioma='pt-BR', is_preland=False):
-    """Cria conteúdo da sidebar automaticamente SEM PREÇOS"""
-    
-    # Produtos relacionados por categoria
-    produtos_relacionados = self.obter_produtos_relacionados(categoria, nome_original)
-    
-    if idioma.lower().startswith('en'):
-        html = f'''
+    def criar_sidebar_conteudo(self, categoria, produto_slug, nome_original, link_afiliado, idioma='pt-BR', is_preland=False):
+        """Cria conteúdo da sidebar automaticamente SEM PREÇOS"""
+        
+        # Produtos relacionados por categoria
+        produtos_relacionados = self.obter_produtos_relacionados(categoria, nome_original)
+        
+        if idioma.lower().startswith('en'):
+            html = f'''
         <div class="widget">
             <h3><i class="fas fa-star"></i> Featured Product</h3>
             <p><strong>{nome_original}</strong></p>
-            <p>Special limited time offer</p>
+            <p>Special limited time offer available</p>
             <a href="{link_afiliado}" class="btn-sidebar" target="_blank" rel="nofollow sponsored">Learn More</a>
         </div>
 
@@ -1352,10 +1413,10 @@ def criar_sidebar_conteudo(self, categoria, produto_slug, nome_original, link_af
             <ul>
         '''
         
-        for produto in produtos_relacionados:
-            html += f'                    <li><a href="#">{produto}</a></li>\n'
+            for produto in produtos_relacionados:
+                html += f'                <li><a href="#">{produto}</a></li>\n'
         
-        html += f'''                </ul>
+            html += f'''            </ul>
             <p><a href="{self.calcular_caminho_relativo(f'{categoria}/{produto_slug}/', f'{categoria}/index.html')}">View all products →</a></p>
         </div>
 
@@ -1368,12 +1429,12 @@ def criar_sidebar_conteudo(self, categoria, produto_slug, nome_original, link_af
             </ul>
         </div>
         '''
-    else:
-        html = f'''
+        else:
+            html = f'''
         <div class="widget">
             <h3><i class="fas fa-star"></i> Destaque</h3>
             <p><strong>{nome_original}</strong></p>
-            <p>Oferta especial por tempo limitado</p>
+            <p>Oferta especial por tempo limitado disponível</p>
             <a href="{link_afiliado}" class="btn-sidebar" target="_blank" rel="nofollow sponsored">Saiba Mais</a>
         </div>
 
@@ -1382,10 +1443,10 @@ def criar_sidebar_conteudo(self, categoria, produto_slug, nome_original, link_af
             <ul>
         '''
         
-        for produto in produtos_relacionados:
-            html += f'                    <li><a href="#">{produto}</a></li>\n'
+            for produto in produtos_relacionados:
+                html += f'                <li><a href="#">{produto}</a></li>\n'
         
-        html += f'''                </ul>
+            html += f'''            </ul>
             <p><a href="{self.calcular_caminho_relativo(f'{categoria}/{produto_slug}/', f'{categoria}/index.html')}">Ver todos os produtos →</a></p>
         </div>
 
@@ -1398,8 +1459,8 @@ def criar_sidebar_conteudo(self, categoria, produto_slug, nome_original, link_af
             </ul>
         </div>
         '''
-    
-    return html
+        
+        return html
     
     def obter_produtos_relacionados(self, categoria, produto_atual):
         """Retorna lista de produtos relacionados por categoria"""
@@ -1431,7 +1492,7 @@ def criar_sidebar_conteudo(self, categoria, produto_slug, nome_original, link_af
                 return f'''
                 <div class="cta-premium">
                     <h3>🚀 Special Launch Offer!</h3>
-                    <p>Save {random.randint(25, 40)}% Today Only</p>
+                    <p>Limited time opportunity</p>
                     
                     <div class="cta-button-container">
                         <a href="{link_afiliado}" class="cta-button-premium" target="_blank" rel="nofollow sponsored">
@@ -1446,7 +1507,7 @@ def criar_sidebar_conteudo(self, categoria, produto_slug, nome_original, link_af
                 return f'''
                 <div class="cta-premium">
                     <h3>🚀 Oferta de Lançamento!</h3>
-                    <p>Economize {random.randint(25, 40)}% Apenas Hoje</p>
+                    <p>Oportunidade por tempo limitado</p>
                     
                     <div class="cta-button-container">
                         <a href="{link_afiliado}" class="cta-button-premium" target="_blank" rel="nofollow sponsored">
@@ -1462,7 +1523,7 @@ def criar_sidebar_conteudo(self, categoria, produto_slug, nome_original, link_af
                 return f'''
                 <div class="cta">
                     <h3>Ready to Experience {produto}?</h3>
-                    <p>Get the best price through our special link:</p>
+                    <p>Get the best offer through our special link:</p>
                     <a href="{link_afiliado}" class="btn-cta" target="_blank" rel="nofollow sponsored">
                         <i class="fas fa-shopping-cart"></i> View Special Offer
                     </a>
@@ -1472,7 +1533,7 @@ def criar_sidebar_conteudo(self, categoria, produto_slug, nome_original, link_af
                 return f'''
                 <div class="cta">
                     <h3>Pronto para Experimentar {produto}?</h3>
-                    <p>Garanta o melhor preço através do nosso link especial:</p>
+                    <p>Garanta a melhor oferta através do nosso link especial:</p>
                     <a href="{link_afiliado}" class="btn-cta" target="_blank" rel="nofollow sponsored">
                         <i class="fas fa-shopping-cart"></i> Ver Oferta Especial
                     </a>
@@ -1589,6 +1650,7 @@ def criar_sidebar_conteudo(self, categoria, produto_slug, nome_original, link_af
     <title>{titulo}</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://topofertas.reviewnexus.blog/assets/js/script.js" defer></script>
 </head>
 <body>
     {self.criar_header_basico(idioma)}
@@ -2265,6 +2327,7 @@ if __name__ == "__main__":
     <title>Top Ofertas - Reviews Honestos</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://topofertas.reviewnexus.blog/assets/js/script.js" defer></script>
 </head>
 <body>
     <header class="site-header">
