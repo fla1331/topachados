@@ -594,6 +594,7 @@ ol {
     background-color: #2ecc71; /* Lighter green on hover */
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    text-decoration: none !important;
 }
 
 /* Sidebar REMOVED */
@@ -683,6 +684,7 @@ ol {
     transform: translateY(-3px);
     box-shadow: 0 6px 16px rgba(255, 107, 0, 0.3);
     background: linear-gradient(135deg, #ff8533, var(--accent-color));
+    text-decoration: none !important;
 }
 
 /* Product Links */
