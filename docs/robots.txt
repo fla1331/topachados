@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /backup/
+Disallow: /backup_seo/
+Disallow: /backup_seo_recursivo/
+Disallow: /teste/
+Disallow: /test/
+Disallow: /weight-loss-quiz/
+Disallow: /page/
+
+Sitemap: https://topofertas.reviewnexus.blog/sitemap.xml
