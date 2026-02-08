@@ -1,11 +1,8 @@
+# ROBOTS.TXT 
 User-agent: *
 Allow: /
-Disallow: /backup/
-Disallow: /backup_seo/
-Disallow: /backup_seo_recursivo/
-Disallow: /teste/
-Disallow: /test/
-Disallow: /weight-loss-quiz/
-Disallow: /page/
-
+Crawl-delay: 3 
 Sitemap: https://topofertas.reviewnexus.blog/sitemap.xml
+
+User-agent: GPTBot
+Disallow: /
