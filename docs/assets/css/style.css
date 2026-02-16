@@ -787,6 +787,12 @@ ol {
     transform: scale(1.3);
 }
 
+.round-image {
+    width: 50% !important;
+    border-radius: 50%;
+    margin: 0 auto;;
+}
+
 /* Benefits List */
 .benefits-list {
     list-style: none;
